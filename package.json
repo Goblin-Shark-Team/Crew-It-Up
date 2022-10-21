@@ -1,0 +1,28 @@
+{
+  "name": "crew-it-up",
+  "version": "1.0.0",
+  "description": "A technology that allows photographers to network with other photographers and directors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm run start --prefix server",
+    "client": "npm run start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goblin-Shark-Team/Crew-It-Up.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goblin-Shark-Team/Crew-It-Up/issues"
+  },
+  "homepage": "https://github.com/Goblin-Shark-Team/Crew-It-Up#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "eslint": "^8.26.0"
+  }
+}
