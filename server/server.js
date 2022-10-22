@@ -14,7 +14,9 @@ app.use(express.json());
 /**
  * Static file requests
  */
+
 app.use('/build', express.static(path.join(__dirname, '../client/build')));
+
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
@@ -22,11 +24,19 @@ app.get('/', (req, res) => {
 /**
  * Define Route Handlers
  */
+
 app.use('/user', userRouter); // for photographers (if we want client logins, we will need a client route)
+
+/**
+ * Not found  error handler
+ */
+
+
 
 /**
  * Global error handler
  */
+
  app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
