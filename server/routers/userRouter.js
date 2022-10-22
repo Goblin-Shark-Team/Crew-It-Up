@@ -34,10 +34,12 @@ router.post('/',
 )
 
 /**
- * Update user information.
- * Params: user_id (to differentiate users with same username, different email)
- * Body: current username, new username, new password, new email
+ * Update critical user info.
+ * Params: N/A
+ * Body: user_id, username, password, new email
  *       firstname, lastname, city, state, zipcode
+ * ****** If it is present on the request body, it will be updated, ******
+ * ****** please do not include placeholder keys with empty values. ******
  */
 router.put('/',
   (req, res) => {
@@ -46,11 +48,17 @@ router.put('/',
 )
 
 /**
+ * Update user profile info.
+ * Params: N/A
+ * Body: 
+ */
+
+/**
  * Delete user. Can we get photos to delete automatically using postgres?
  * Params: N/A
- * Body: password (to authenticate deletion)
+ * Body: user_id, password (to authenticate deletion)
  */
-router.delete('/:user_id', 
+router.delete('/', 
   (req, res) => {
     return res.sendStatus(200);
   }

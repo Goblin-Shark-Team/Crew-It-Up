@@ -49,6 +49,15 @@ userController.postUser = (req, res, next) => {
  * Return - an object containing the updated user information
  * Params - N/A
  * req.body - user_id (string corresponding to postgres row id in username table)
+ * req.body could also contain the following: 
+ *  -newUsername (will have been validated)
+ *  -newPassword (will have been validated)
+ *  -newEmail (check if it already exists), (will have been validated)
+ *  -newFirstname (will have been validated)
+ *  -newLastname  (will have been validated)
+ *  -newCity (validate client side)      
+ *  -newState (validate client side)
+ *  -newZipcode (validate client side)
  */
 userController.updateUser = (req, res, next) => {
   const query = ``;
