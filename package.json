@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Goblin-Shark-Team/Crew-It-Up#readme",
   "devDependencies": {
-    "concurrently": "^7.4.0",
+    "concurrently": "^7.5.0",
     "eslint": "^8.26.0"
   }
 }
