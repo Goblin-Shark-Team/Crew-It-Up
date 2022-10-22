@@ -1,28 +1,19 @@
 const { check, validationResult } = require('express-validator');
 
-const checkUsername = () => {
-  return [
-    check('username')
-      .trim()
-      .isLength( { min: 8, max: 15 } )
-      .withMessage('username must be a minimum of 8 characters')
-  ]
-}
-
-const checkPassword = (req) => {
+const checkPassword = () => {
   return [
     check('password')
       .trim()
       .isLength({ min: 8, max: 15 })
       .withMessage('your password should be between 8-15 characters')
       .matches(/\d/)
-      .withMessage('your password shoudl have at least one number')
+      .withMessage('your password should have at least one number')
       .matches(/[!@#$%^&*(),.?":{}|<>]/)
-      .withMessage('your password shoudl have at least one special character')
+      .withMessage('your password should have at least one special character')
   ]
 };
 
-const confirmPassword = (req) => {
+const confirmPassword = () => {
   return [ 
     check('confirmPassword').custom((value, { req }) =>{
       if(value !== req.body.password) {
@@ -34,7 +25,7 @@ const confirmPassword = (req) => {
   ]
 };
 
-const checkEmail = (req) =>{
+const checkEmail = () =>{
   return [ 
     check('email')
       .trim()
@@ -43,7 +34,6 @@ const checkEmail = (req) =>{
       .normalizeEmail()
   ];
 }
-
 
 const validate = (req, res, next) => {
   console.log('validating');
@@ -55,7 +45,6 @@ const validate = (req, res, next) => {
 };
 
 module.exports = {
-  checkUsername,
   checkPassword,
   confirmPassword,
   checkEmail,
