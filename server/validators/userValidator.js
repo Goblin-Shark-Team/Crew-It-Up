@@ -1,14 +1,5 @@
 const { check, validationResult } = require('express-validator');
 
-const checkUsername = () => {
-  return [
-    check('username')
-      .trim()
-      .isLength( { min: 8, max: 15 } )
-      .withMessage('username must be a minimum of 8 characters')
-  ]
-}
-
 const checkPassword = () => {
   return [
     check('password')
@@ -54,7 +45,6 @@ const validate = (req, res, next) => {
 };
 
 module.exports = {
-  checkUsername,
   checkPassword,
   confirmPassword,
   checkEmail,
