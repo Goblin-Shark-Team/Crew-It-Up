@@ -1,5 +1,4 @@
-import React, { useStae } from "react";
-import '../styles/portfolio.scss'
+import React, { useState } from "react";
 
 export default function Portfolio(){
     //const[images, setImages] = useState([]);

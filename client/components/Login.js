@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../styles/login.scss';
 
 export default function Login () {
     const[email, setEmail] = useState("");
@@ -15,34 +16,32 @@ export default function Login () {
     }
 
     return (
-        <div className='bigbox'>
-            <form onSubmit={handleSubmit}>
-                <span>Login</span>
-                <div className="email-text">
-                    <input type='text'
-                    placeholder="Email"
-                    name="email"
-                    className="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className='password-text'>
-                    <input type="password"
-                    placeholder="Password"
-                    name="password"
-                    className="pasword"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    />
+            <form id='login-box' onSubmit={handleSubmit}>
+                <span id='login-title' className='primary-text'>LOG IN</span>
+                <div id='login-boxes'>
+                    <div>
+                        <input type='text'
+                        placeholder="Email"
+                        name="email"
+                        className="login-input"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <input type="password"
+                        placeholder="Password"
+                        name="password"
+                        className="login-input"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
                 </div>
                 <div id='login-button'>
-                    <button type='submit' disabled={!validateForm()}>Login</button>
+                    <button type='submit' id='login-btn' disabled={!validateForm()}>Login</button>
                 </div>
             </form>
-           
-           
-        </div>
     )
 
 }

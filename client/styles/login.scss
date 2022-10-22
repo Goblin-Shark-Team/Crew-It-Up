@@ -1,0 +1,52 @@
+$black: rgb(14, 14, 14);
+$black-light: rgb(18, 18, 18);
+$primary-font-stack: 'Montserrat', sans-serif;
+$secondary-font-stack: 'Fira Sans', sans-serif;
+
+#login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25vw;
+    width: 35vw;
+    border: solid 1px gray;
+    box-shadow: 0 0 7px gray;
+    background-color: $black-light;
+}
+
+#login-title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.login-input {
+    border: solid transparent;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    font-family: $secondary-font-stack;
+    font-weight: 300;
+    width: 250px;
+    height: 25px;
+}
+
+#login-btn {
+    background-color: white;
+    font-family: $secondary-font-stack;
+    font-weight: 300;
+    opacity: .8;
+    border: none;
+    height: 2rem;
+    width: 10rem;
+}
+
+#login-btn:enabled {
+    font-weight: 400;
+    border: solid transparent;
+    background-color: white;
+    opacity: 1;
+    border: solid 1px gray;
+    box-shadow: 0 0 6px gray;
+    
+}
