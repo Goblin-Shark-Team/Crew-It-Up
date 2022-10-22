@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const userRouter = require('./routers/userRouter');
+const photosRouter = require('./routers/photosRouter');
 
 // create your express object
 const app = express();
@@ -26,6 +27,14 @@ app.get('/', (req, res) => {
  */
 
 app.use('/user', userRouter); // for photographers (if we want client logins, we will need a client route)
+app.use('/photos', photosRouter); // for photos 
+
+/**
+ * Handle faulty requests
+ */
+app.use('/', (req, res) => {
+  return res.send(404);
+})
 
 /**
  * Not found  error handler
