@@ -6,12 +6,13 @@ import '../styles.scss'
 class App extends Component {
   constructor(props) {
     super(props);
+    
   }
 
   render() {
     return (
       <div>
-        <Login />
+        <Portfolio />
       </div>
     )
   }
