@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Login from '../containers/Login'
+import Login from './Login'
+import '../styles.sass'
 
 class App extends Component {
   constructor(props) {
