@@ -39,7 +39,7 @@ router.post('/',
  * Body: current username, new username, new password, new email
  *       firstname, lastname, city, state, zipcode
  */
-router.put('/:user_id',
+router.put('/',
   (req, res) => {
     return res.sendStatus(200);
   }
