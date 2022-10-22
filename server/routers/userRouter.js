@@ -86,7 +86,7 @@ router.put('/email',
  * Update: profile (non critical, optional info w/ no validation)
  * Middleware: ??? bcrypt + hash ??? -> userController.updateProfile
  * Params: N/A
- * Body: one, many, or all of firstname, lastname, city, state, zipcode, bio
+ * Body: user_id, one, many, or all of firstname, lastname, city, state, zipcode, bio
  * Returns: 
  */
  router.put('/profile', 

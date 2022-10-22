@@ -12,18 +12,18 @@ const userController = {};
  */
 userController.login = (req, res, next) => {
   console.log('in userController login');
-  const query = ``; //update query(ies)
+  const query = `SELECT * FROM users WHERE email = ${req.body.email} AND password = ${req.body.password}`; //update query(ies)
 
   db.query(query)
     .then(data => {
-      // res.locals.user = ;
+      res.locals.user = data;
       return next();
     }).catch(err => next({
         log: 'error in userController login',
         message: { err: err }
     }));
 };
-
+ 
 /**
  * Grab a user's profile information from a user_id to show to a client.
  * Return - bio, contact email
