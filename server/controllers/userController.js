@@ -92,7 +92,7 @@ userController.updatePassword = (req, res, next) => {
  */
 userController.updateEmail = (req, res, next) => {
   console.log('in userController updateEmail')
-  const query = ``; //update query(ies)
+  const query = `UPDATE users SET email = '${req.body.email}' WHERE users._id = '${req.body.user_id}'`; //update query(ies)
   db.query(query)
     .then(data => {
       console.log(data);
