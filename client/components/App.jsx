@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Login from '../containers/Login'
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div>
         <h1>Hello World!</h1>
+        <Login />
       </div>
     )
   }

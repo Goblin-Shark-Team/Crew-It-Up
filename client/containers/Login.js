@@ -1,5 +1,4 @@
-import React from "react";
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 export default function Login () {
     const[email, setEmail] = useState("");
@@ -9,24 +8,40 @@ export default function Login () {
         return email.length > 0 && password.length > 0;
     }
 
-    function handleChange(e){
-        
-    }
 
     function handleSubmit(e){
-        console.log('submitted')
         e.preventDefault();
+        console.log('submitted')
     }
 
     return (
-        <div className="login">
+        <div className='bigbox'>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Email:
-                    <input type='text' />
-                </label>
-                
+                <span>Login</span>
+                <div className="email-text">
+                    <input type='text'
+                    placeholder="Email"
+                    name="email"
+                    className="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className='password-text'>
+                    <input type="password"
+                    placeholder="Password"
+                    name="password"
+                    className="pasword"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div id='login-button'>
+                    <button type='submit' disabled={!validateForm()}>Login</button>
+                </div>
             </form>
+           
+           
         </div>
     )
 
