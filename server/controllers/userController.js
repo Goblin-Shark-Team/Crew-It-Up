@@ -44,4 +44,23 @@ userController.postUser = (req, res, next) => {
     }));
 }
 
+/**
+ * Update a user in the SQL database. 
+ * Return - an object containing the updated user information
+ * Params - N/A
+ * req.body - user_id (string corresponding to postgres row id in username table)
+ */
+userController.updateUser = (req, res, next) => {
+  const query = ``;
+
+  db.query(query)
+    .then(data => {
+      console.log(data);
+      // res.locals.user = ;
+    }).catch(err => next({
+      log: 'error in userController updateUser',
+      message: { err: err }
+    }));
+}
+
 module.exports = userController;
