@@ -1,4 +1,4 @@
-import React, { useStae } from "react";
+import React, { useStae, useEffect } from "react";
 import '../styles/portfolio.scss'
 
 export default function Portfolio(){
