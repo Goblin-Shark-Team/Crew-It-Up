@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const userRouter = require('./routers/userRouter');
 
 // create your express object
 const app = express();
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
 /**
  * Define Route Handlers
  */
-
+app.use('/user', userRouter); // for photographers (if we want client logins, we will need a client route)
 
 
 
