@@ -7,16 +7,15 @@ const userController = {};
  * Attempt a login by retrieving information in an SQL database.
  * Return - an object on res.locals.user if the user exists
  *          otherwise, an empty object
- * Params - email, password (hashed? string)
+ * Params - email, passcode (hashed? string)
  * req.body - N/A
  */
 userController.login = (req, res, next) => {
   console.log('in userController login');
-  const query = `SELECT * FROM users WHERE email = ${req.body.email} AND password = ${req.body.passcode}`; //update query(ies)
-
+  const query = `SELECT * FROM users WHERE email = '${req.params.email}' AND passcode = '${req.params.passcode}'`; //update query(ies)
   db.query(query)
     .then(data => {
-      res.locals.user = data;
+      res.locals.user = data.rows[0];
       return next();
     }).catch(err => next({
         log: 'error in userController login',
@@ -32,11 +31,11 @@ userController.login = (req, res, next) => {
  */
 userController.getProfile = (req, res, next) => {
   console.log('in userController getProfile');
-  const query = `SELECT bio, email FROM users WHERE users._id = '${req.params.user_id}'`; //update query(ies)
+  const query = ``; //update query(ies)
 
   db.query(query)
     .then(data => {
-      res.locals.profile = data.rows[0];
+      // res.locals.user = ;
       return next();
     }).catch(err => next({
         log: 'error in userController getProfile',
@@ -48,17 +47,17 @@ userController.getProfile = (req, res, next) => {
  * Create a new user in the SQL database
  * Return - an object containing the new user information
  * Params - N/A
- * req.body - passcode (hashed? string), email (string)
+ * req.body - password (hashed? string), email (string)
  * ****** Email must be unique in DB ******************
  */
 userController.createUser = (req, res, next) => {
   console.log('in userController createUser')
-  const query = `INSERT INTO users (email, passcode) VALUES ('${req.body.email}','${req.body.passcode}')`; //update query(ies)
+  const query = ``; //update query(ies)
 
   db.query(query)
     .then(data => {
       console.log(data);
-      res.locals.user = data;
+      // res.locals.user = ;
       return next();
     }).catch(err => next({
       log: 'error in userController createUser',
@@ -67,33 +66,33 @@ userController.createUser = (req, res, next) => {
 };
 
 /**
- * Check for passcode match, update passcode
+ * Update password
  * Params: N/A
- * Body: user_id, oldPasscode, passcode (new one, validated)
+ * Body: user_id
  * Returns: 
  */
-userController.updatePasscode = (req, res, next) => {
-  console.log('in userController updatePasscode')
-  const query = `UPDATE users SET passcode = '${req.body.passcode}' WHERE users._id = '${req.body.user_id}' AND passcode = '${req.body.oldPasscode}'`; //update query(ies)
+userController.updatePassword = (req, res, next) => {
+  console.log('in userController updatePassword')
+  const query = ``; //update query(ies)
   db.query(query)
     .then(data => {
       console.log(data);
-      next();
+      //do something?
     }).catch(err => next({
-      log: 'error in userController updatePasscode',
+      log: 'error in userController updatePassword',
       message: { err: err }
     }));
 };
 
 /**
- * Update email 
+ * Update email - EMAIL MUST BE UNIQUE IN DB
  * Params: N/A
- * Body: user_id, passcode (check this to authenticate)
+ * Body: user_id
  * Returns: 
  */
 userController.updateEmail = (req, res, next) => {
   console.log('in userController updateEmail')
-  const query = `UPDATE users SET email = '${req.body.email}' WHERE users._id = '${req.body.user_id}'`; //update query(ies)
+  const query = ``; //update query(ies)
   db.query(query)
     .then(data => {
       console.log(data);
@@ -107,12 +106,12 @@ userController.updateEmail = (req, res, next) => {
 /**
  * Update option user information (profile)
  * Params: N/A
- * Body: could contain firstname, lastname, city, state, zipcode, bio, passcode (to authenticate)
+ * Body: could contain firstname, lastname, city, state, zipcode, bio
  * Returns: 
  */
  userController.updateProfile = (req, res, next) => {
   console.log('in userController updateProfile')
-  const query = `UPDATE users SET firstname = '${req.params.firstname}', lastname = '${req.params.lastname}', city = '${req.params.city}', state = '${req.params.state}', zipcode = '${req.params.zipcode}', bio = '${req.params.bio}' WHERE _id = '${req.params.users_id}' AND passcode = '${req.params.passcode}'`; //update query(ies)
+  const query = ``; //update query(ies)
   db.query(query)
     .then(data => {
       console.log(data);
@@ -127,7 +126,7 @@ userController.updateEmail = (req, res, next) => {
 /**
  * Delete user and all associated child content (see postgres on delete cascade)
  * Params: N/A
- * Body: user_id, passcode (hashed? string) 
+ * Body: user_id, password (hashed? string) 
  * Returns: 
  */
 userController.deleteUser = (req, res, next) => {
