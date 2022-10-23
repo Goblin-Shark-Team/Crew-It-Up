@@ -7,7 +7,7 @@ const router = express.Router(); // create our router
 /**
  * Login and get user information
  * Middleware: ??? bcrypt + hashing ??? -> userController.login
- * Params: email, password
+ * Params: email, passcode
  * Body: N/A
  * Return: user profile information from database
  * Tested - working
@@ -37,7 +37,7 @@ router.get('/profile/:user_id',
  * Create a new user.
  * Middleware: validation -> ??? bcrypt + hash ??? -> userController.createUser
  * Params: N/A
- * Body: password, email
+ * Body: passcode, email
  * Return: new user information
  */
 router.post('/signup', 
@@ -52,8 +52,8 @@ router.post('/signup',
 )
 
 /**
- * Update: password
- * Middleware: validate new password -> ??? bcrypt + hash ??? (oldPassword AND password) ->  userController.updatePassword
+ * Update: passcode
+ * Middleware: validate new passcode -> ??? bcrypt + hash ??? (oldPasscode AND passcode) ->  userController.updatePasscode
  * Params: N/A
  * Body: user_id, oldPasscode (to validate), passcode 
  * Returns: 
@@ -102,7 +102,7 @@ router.put('/email',
  * Delete user -> should delete all other info
  * Middleware: ??? bcrypt + hash ??? -> userController.deleteUser
  * Params: N/A
- * Body: user_id, password (to authenticate deletion)
+ * Body: user_id, passcode (to authenticate deletion)
  * Returns:  
  */
 router.delete('/', 

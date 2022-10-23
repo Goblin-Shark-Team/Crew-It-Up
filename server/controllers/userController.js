@@ -15,7 +15,7 @@ userController.login = (req, res, next) => {
   const query = `SELECT * FROM users WHERE email = '${req.params.email}' AND passcode = '${req.params.passcode}'`; //update query(ies)
   db.query(query)
     .then(data => {
-      res.locals.user = data.rows[0];
+      res.locals.user = data.rows[0].rows[0];
       return next();
     }).catch(err => next({
         log: 'error in userController login',

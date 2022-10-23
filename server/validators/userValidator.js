@@ -5,11 +5,11 @@ const checkPasscode = () => {
     check('passcode')
       .trim()
       .isLength({ min: 8, max: 15 })
-      .withMessage('your password should be between 8-15 characters')
+      .withMessage('your passcode should be between 8-15 characters')
       .matches(/\d/)
-      .withMessage('your password should have at least one number')
+      .withMessage('your passcode should have at least one number')
       .matches(/[!@#$%^&*(),.?":{}|<>]/)
-      .withMessage('your password should have at least one special character')
+      .withMessage('your passcode should have at least one special character')
   ]
 };
 
