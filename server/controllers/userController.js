@@ -71,15 +71,15 @@ userController.createUser = (req, res, next) => {
  * Body: user_id
  * Returns: 
  */
-userController.updatePassword = (req, res, next) => {
-  console.log('in userController updatePassword')
-  const query = ``; //update query(ies)
+userController.updatePasscode = (req, res, next) => {
+  console.log('in userController updatePasscode')
+  const query = `UPDATE users SET passcode = '${req.body.passcode}' WHERE users._id = ${req.body.user_id} AND passcode = '${req.body.oldPasscode}'`; //update query(ies)
   db.query(query)
     .then(data => {
       console.log(data);
       //do something?
     }).catch(err => next({
-      log: 'error in userController updatePassword',
+      log: 'error in userController updatePasscode',
       message: { err: err }
     }));
 };

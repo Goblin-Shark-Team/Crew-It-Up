@@ -62,7 +62,7 @@ router.put('/passcode',
   validator.validate,
   userController.updatePasscode,
   (req, res) => {
-    return res.sendStatus(200);
+    return res.status(200).json();
   }
 )
 
