@@ -1,8 +1,8 @@
 const { check, validationResult } = require('express-validator');
 
-const checkPassword = () => {
+const checkPasscode = () => {
   return [
-    check('password')
+    check('passcode')
       .trim()
       .isLength({ min: 8, max: 15 })
       .withMessage('your password should be between 8-15 characters')
@@ -13,11 +13,11 @@ const checkPassword = () => {
   ]
 };
 
-const confirmPassword = () => {
+const confirmPasscode = () => {
   return [ 
-    check('confirmPassword').custom((value, { req }) =>{
-      if(value !== req.body.password) {
-        console.log(req.body.password, req.body.confirmPassword);
+    check('confirmPasscode').custom((value, { req }) =>{
+      if(value !== req.body.passcode) {
+        console.log(req.body.passcode, req.body.confirmPasscode);
         throw new Error('confirm password does not match');
       }
       return true;
@@ -45,8 +45,8 @@ const validate = (req, res, next) => {
 };
 
 module.exports = {
-  checkPassword,
-  confirmPassword,
+  checkPasscode,
+  confirmPasscode,
   checkEmail,
   validate
 }
