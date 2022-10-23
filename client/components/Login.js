@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../styles/login.scss';
 
-export default function Login () {
+export default function Login (props) {
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
 
@@ -9,10 +9,31 @@ export default function Login () {
         return email.length > 0 && password.length > 0;
     }
 
-
     function handleSubmit(e){
         e.preventDefault();
-        console.log('submitted')
+        fetch(`user/login/${email}/${password}`)
+          .then(data => data.json())
+          .then(data => {
+            console.log(data);
+            if(!data) {
+              alert('Invalid login');
+              setEmail('');
+              setPassword('');
+            } else { 
+                // Get data to app
+                // Redirect user
+                /**
+                 * format - obj with keys
+                 * firstname - string
+                 * lastname - string
+                 * bio - string
+                 * city - string
+                 * state - string
+                 * zip_code - string
+                 */
+            }
+          })
+          .catch(err => alert('please try again'));
     }
 
     return (
