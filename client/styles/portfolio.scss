@@ -1,19 +1,39 @@
+$black: rgb(14, 14, 14);
+$black-light: rgb(18, 18, 18);
+$primary-font-stack: 'Montserrat', sans-serif;
+$secondary-font-stack: 'Fira Sans', sans-serif;
 
-.portfolio-main {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 90%
+html, body {
+    margin: 0;
+    height: 100%;
 }
 
-.sliding-images {
+#portfolio-main {
+    background-color: $black;
+    display: grid;
+    grid-template-rows: 10% 75% 15%;
+    justify-items: center;
+}
+
+header {
+    font-family: $primary-font-stack;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 500;
+    grid-row: 1 / 2;
+}
+
+#sliding-images {
     border: 1px solid black;
+    background-color: $black-light;
     height: 60%;
-    width: 75%
+    width: 75%;
+    grid-row: 2 / 3;
 }
 
-.bio{
-    border: 1px solid blue;
+#bio-text {
+    font-family: $secondary-font-stack;
+    color: white;
 }
 
