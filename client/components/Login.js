@@ -20,7 +20,7 @@ export default function Login () {
                 <span id='login-title' className='primary-text'>LOG IN</span>
                 <div id='login-boxes'>
                     <div>
-                        <input type='text'
+                        <input type='email'
                         placeholder="Email"
                         name="email"
                         className="login-input"
