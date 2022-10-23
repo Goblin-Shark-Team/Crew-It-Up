@@ -7,16 +7,15 @@ const userController = {};
  * Attempt a login by retrieving information in an SQL database.
  * Return - an object on res.locals.user if the user exists
  *          otherwise, an empty object
- * Params - email, password (hashed? string)
+ * Params - email, passcode (hashed? string)
  * req.body - N/A
  */
 userController.login = (req, res, next) => {
   console.log('in userController login');
-  const query = `SELECT * FROM users WHERE email = ${req.body.email} AND password = ${req.body.password}`; //update query(ies)
-
+  const query = `SELECT * FROM users WHERE email = '${req.params.email}' AND passcode = '${req.params.passcode}'`; //update query(ies)
   db.query(query)
     .then(data => {
-      res.locals.user = data;
+      res.locals.user = data.rows[0];
       return next();
     }).catch(err => next({
         log: 'error in userController login',
@@ -72,15 +71,15 @@ userController.createUser = (req, res, next) => {
  * Body: user_id
  * Returns: 
  */
-userController.updatePassword = (req, res, next) => {
-  console.log('in userController updatePassword')
-  const query = ``; //update query(ies)
+userController.updatePasscode = (req, res, next) => {
+  console.log('in userController updatePasscode')
+  const query = `UPDATE users SET passcode = '${req.body.passcode}' WHERE users._id = ${req.body.user_id} AND passcode = '${req.body.oldPasscode}'`; //update query(ies)
   db.query(query)
     .then(data => {
       console.log(data);
       //do something?
     }).catch(err => next({
-      log: 'error in userController updatePassword',
+      log: 'error in userController updatePasscode',
       message: { err: err }
     }));
 };
@@ -93,7 +92,7 @@ userController.updatePassword = (req, res, next) => {
  */
 userController.updateEmail = (req, res, next) => {
   console.log('in userController updateEmail')
-  const query = ``; //update query(ies)
+  const query = `UPDATE users SET email = '${req.body.email}' WHERE users._id = '${req.body.user_id}'`; //update query(ies)
   db.query(query)
     .then(data => {
       console.log(data);
@@ -133,6 +132,7 @@ userController.updateEmail = (req, res, next) => {
 userController.deleteUser = (req, res, next) => {
   console.log('in userController deleteUser')
   const query = ``; //update query(ies)
+  
   db.query(query)
     .then(data => {
       console.log(data);
