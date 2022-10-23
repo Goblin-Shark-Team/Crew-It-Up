@@ -7,14 +7,15 @@ const router = express.Router(); // create our router
 /**
  * Login and get user information
  * Middleware: ??? bcrypt + hashing ??? -> userController.login
- * Params: email, password
+ * Params: email, passcode
  * Body: N/A
  * Return: user profile information from database
+ * Tested - working
  */
-router.get('/login/:email/:password', 
+router.get('/login/:email/:passcode', 
   userController.login,
   (req, res) => {
-    return res.sendStatus(200);
+    return res.status(200).json(res.locals.user);
   }
 );
 
@@ -28,7 +29,7 @@ router.get('/login/:email/:password',
 router.get('/profile/:user_id', 
   userController.getProfile,
   (req, res) => {
-    return res.sendStatus(200);
+    return res.status(200).json(res.locals.user);
   }
 );
 
@@ -36,12 +37,12 @@ router.get('/profile/:user_id',
  * Create a new user.
  * Middleware: validation -> ??? bcrypt + hash ??? -> userController.createUser
  * Params: N/A
- * Body: password, email
+ * Body: passcode, email
  * Return: new user information
  */
 router.post('/signup', 
-  validator.checkPassword(),
-  validator.confirmPassword(),
+  validator.checkPasscode(),
+  validator.confirmPasscode(),
   validator.checkEmail(),
   validator.validate,
   userController.createUser,
@@ -51,18 +52,19 @@ router.post('/signup',
 )
 
 /**
- * Update: password
- * Middleware: validate new password -> ??? bcrypt + hash ??? (oldPassword AND password) ->  userController.updatePassword
+ * Update: passcode
+ * Middleware: validate new passcode -> ??? bcrypt + hash ??? (oldPasscode AND passcode) ->  userController.updatePasscode
  * Params: N/A
- * Body: user_id, oldPassword (to validate), password 
+ * Body: user_id, oldPasscode (to validate), passcode 
  * Returns: 
  */
-router.put('/password',
-  validator.checkPassword(),    
+router.put('/passcode',
+  validator.checkPasscode(),
+  validator.confirmPasscode(),    
   validator.validate,
-  userController.updatePassword,
+  userController.updatePasscode,
   (req, res) => {
-    return res.sendStatus(200);
+    return res.status(200).json(res.locals.updated);
   }
 )
 
@@ -71,14 +73,14 @@ router.put('/password',
  * Middleware: validate new email -> ??? bcrypt + hash ??? -> userController.updateEmail
  * Params: N/A
  * Body: user_id, password (to validate), email 
- * Returns: 
+ * Returns: true if updated, false otherwise
  */
 router.put('/email',
   validator.checkEmail(),
   validator.validate,
-  userController.updatePassword,
+  userController.updateEmail,
   (req, res) => {
-    return res.sendStatus(200);
+    return res.status(200).json(res.locals.updated);
   }
 )
 
@@ -92,7 +94,7 @@ router.put('/email',
  router.put('/profile', 
  userController.updateProfile,
  (req,res) => {
-   return res.sendStatus(200);
+   return res.status(200).json(res.locals.updated);
  }
 )
 
@@ -100,13 +102,13 @@ router.put('/email',
  * Delete user -> should delete all other info
  * Middleware: ??? bcrypt + hash ??? -> userController.deleteUser
  * Params: N/A
- * Body: user_id, password (to authenticate deletion)
+ * Body: user_id, passcode (to authenticate deletion)
  * Returns:  
  */
 router.delete('/', 
 userController.deleteUser,
   (req, res) => {
-    return res.sendStatus(200);
+    return res.status(200).json(res.locals.deleted);
   }
 )
 

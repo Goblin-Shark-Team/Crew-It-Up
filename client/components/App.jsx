@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Login from './Login'
+import Portfolio from './Portfolio';
+import '../styles/login.scss'
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +11,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello World!</h1>
+        
+        <Login />
       </div>
     )
   }
