@@ -11,7 +11,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Login />
+        
+        <Portfolio />
       </div>
     )
   }
