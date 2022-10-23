@@ -4,7 +4,6 @@ import SliderBody from './sliderbody.jsx'
 
 export default function Portfolio(){
     //const[images, setImages] = useState([]);
-
   useEffect(() => {
     fetch("https://dog.ceo/api/breeds/image/random")
    .then(response => response.json())
@@ -25,9 +24,4 @@ export default function Portfolio(){
           </div>
       </div>
     )
-
-
-
-
-
 }

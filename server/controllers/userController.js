@@ -15,7 +15,7 @@ userController.login = (req, res, next) => {
   const query = `SELECT * FROM users WHERE email = '${req.params.email}' AND passcode = '${req.params.passcode}'`; //update query(ies)
   db.query(query)
     .then(data => {
-      res.locals.user = data.rows[0];
+      res.locals.user = data.rows[0].rows[0];
       return next();
     }).catch(err => next({
         log: 'error in userController login',
@@ -31,11 +31,11 @@ userController.login = (req, res, next) => {
  */
 userController.getProfile = (req, res, next) => {
   console.log('in userController getProfile');
-  const query = ``; //update query(ies)
+  const query = `SELECT bio, email FROM users WHERE users._id=${req.params.user_id}`; //update query(ies)
 
   db.query(query)
     .then(data => {
-      // res.locals.user = ;
+      res.locals.user = data.rows[0];
       return next();
     }).catch(err => next({
         log: 'error in userController getProfile',
@@ -52,7 +52,7 @@ userController.getProfile = (req, res, next) => {
  */
 userController.createUser = (req, res, next) => {
   console.log('in userController createUser')
-  const query = ``; //update query(ies)
+  const query = `INSERT INTO users(passcode, email) VALUES('${req.body.passcode}', '${req.body.email}')`; //update query(ies)
 
   db.query(query)
     .then(data => {
@@ -76,8 +76,9 @@ userController.updatePasscode = (req, res, next) => {
   const query = `UPDATE users SET passcode = '${req.body.passcode}' WHERE users._id = ${req.body.user_id} AND passcode = '${req.body.oldPasscode}'`; //update query(ies)
   db.query(query)
     .then(data => {
-      console.log(data);
-      //do something?
+      res.locals.updated = data['rowCount'] === 1;
+      console.log(res.locals.updated);
+      return next();
     }).catch(err => next({
       log: 'error in userController updatePasscode',
       message: { err: err }
@@ -95,8 +96,9 @@ userController.updateEmail = (req, res, next) => {
   const query = `UPDATE users SET email = '${req.body.email}' WHERE users._id = '${req.body.user_id}'`; //update query(ies)
   db.query(query)
     .then(data => {
-      console.log(data);
-      //do something?
+      res.locals.updated = data['rowCount'] === 1;
+      console.log(res.locals.updated);
+      return next();
     }).catch(err => next({
       log: 'error in userController updateEmail',
       message: { err: err }
@@ -106,16 +108,23 @@ userController.updateEmail = (req, res, next) => {
 /**
  * Update option user information (profile)
  * Params: N/A
- * Body: could contain firstname, lastname, city, state, zipcode, bio
+ * Body: could contain firstname, lastname, city, state, zip_code, bio
  * Returns: 
  */
  userController.updateProfile = (req, res, next) => {
-  console.log('in userController updateProfile')
-  const query = ``; //update query(ies)
+  console.log('in userController updateProfile');
+  let choices = ``;
+  for(const key in req.body) {
+    if(key === 'firstname' || key === 'lastname' || key === 'city' || key === 'state' || key === 'bio' || key === 'zip_code') {
+      choices += ` ${key} = '${req.body[key]}',`; 
+    } 
+  }
+  choices = choices.substring(0, choices.length - 1);
+  const query = `UPDATE users SET${choices} WHERE users._id = ${req.body.user_id} AND passcode = '${req.body.passcode}'`;
   db.query(query)
     .then(data => {
-      console.log(data);
-      //do something?
+      res.locals.updated = data['rowCount'] === 1;
+      return next();
     }).catch(err => next({
       log: 'error in userController updateProfile',
       message: { err: err }
@@ -131,12 +140,12 @@ userController.updateEmail = (req, res, next) => {
  */
 userController.deleteUser = (req, res, next) => {
   console.log('in userController deleteUser')
-  const query = ``; //update query(ies)
+  const query = `DELETE FROM users WHERE users._id=${req.body.user_id} AND passcode='${req.body.passcode}'`; //update query(ies)
   
   db.query(query)
     .then(data => {
-      console.log(data);
-      //do something?
+      res.locals.deleted = data['rowCount'] === 1;
+      return next();
     }).catch(err => next({
       log: 'error in userController deleteUser',
       message: { err: err }
