@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../styles/login.scss';
 
 export default function Login () {
@@ -8,7 +8,6 @@ export default function Login () {
     function validateForm(){
         return email.length > 0 && password.length > 0;
     }
-
 
     function handleSubmit(e){
         e.preventDefault();
