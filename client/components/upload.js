@@ -25,6 +25,7 @@ export default function Upload(props){
     const handleSubmit = e => {
         e.preventDefault(); 
         console.log('user updated')
+        setUrl('')
     }
 
 
