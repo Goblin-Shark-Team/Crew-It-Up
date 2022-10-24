@@ -26,5 +26,16 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
 #grid-photos {
     grid-row: 3 / 4;
     display: grid;
-    
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr;
+}
+
+img {
+    display: inline-block;
+    grid-row: inherit;
+    grid-column: inherit;
+    width: 30vw;
+    height: 60vh;
+    object-fit: cover;
+    margin: 10px;
 }

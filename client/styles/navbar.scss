@@ -11,6 +11,7 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     display: grid;
     grid-template-columns: 20% 68% 12%;
     align-items: center;
+    position: sticky;
 }
 
 #logo {

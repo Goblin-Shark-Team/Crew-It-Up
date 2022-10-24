@@ -52,7 +52,7 @@ export default function Gallery (props) {
       <Navbar />
         <div id='dropdown'>
           <label id='dropdown-cities'> Select A City </label>
-          <select  onChange={handleCityChange}  className='menus' htmlForm='dropdown-cities'>
+          <select  onChange={handleCityChange}  className='menus' htmlform='dropdown-cities'>
             <option value='null'>Choose one</option>
             {menuItems.map((menu, index) =>
             <option value={menu.location} className='menu-items'>
