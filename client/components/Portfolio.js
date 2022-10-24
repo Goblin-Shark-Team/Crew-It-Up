@@ -1,7 +1,6 @@
 import React from "react";
 import '../styles/portfolio.scss';
-import SearchBar from './Searchbar.jsx';
-import SliderBody from './SliderBody.jsx'
+import SliderBody from './sliderbody.jsx'
 
 
 // export default function Portfolio(){

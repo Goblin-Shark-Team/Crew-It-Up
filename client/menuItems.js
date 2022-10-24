@@ -1,7 +1,17 @@
 export const menuItems = [
  {
-   location: 'Pensacola',
+   location: 'Cities',
    url: '/',
+  //  submenu : [
+  //   {
+  //     'city1': 'Austin',
+  //     'city1url': 'link',
+  //     'city2': 'London',
+  //     'city2url': 'link',
+  //     'city3': 'New York',
+  //     'city3url': 'link',
+  //   }
+  //  ]
  },
  {
    location: 'Austin',
