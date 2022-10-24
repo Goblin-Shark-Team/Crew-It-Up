@@ -32,11 +32,15 @@ export default function Signup(props) {
           setEmail('');
           setPassword('');
           setConfirmPassword('');
+        } else if (data === false) {
+          alert('That email is already associated with an account.')
         } else { 
             props.setUser(data);
         }
       })
-      .catch(err => alert('please try again'));
+      .catch(err => {
+        console.log(err);
+      });
   }
   return (
     <div>
