@@ -1,7 +1,9 @@
-import  {MenuItems}  from  './menuItems' ;
+import React from 'react'
+import  {MenuItems}  from  './MenuItems' ;
 
-function Navbar()  {
-const menuItem = [
+function Navbar ()  {
+const menuItems = [
+
   {
     location: 'Pensacola',
     url: '/Pensacola',
@@ -20,20 +22,18 @@ const menuItem = [
   },
  ];
 
-
  return (
   <nav>
-   <ul className = 'menus'>
-    {MenuItems.map((menu, index) => {
-     return (
-      <li 
-        className = "menu-items" 
-        key = {index} >
-        <a href = {menu.url}> {menu.location}</a>
-      </li>
-     );
-    })}
-   </ul>
+    <label id='dropdown-cities'> Choose A City </label>
+   <select className = 'menus' for='dropdown-cities'>
+    {menuItems.map((menu, index) =>
+    <option className='menu-itmes'>
+       <a href={menu.url}>
+       {menu.location}
+      </a>
+    </option>
+    )}
+   </select>
   </nav>
  );
 };
