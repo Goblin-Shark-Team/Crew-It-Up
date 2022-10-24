@@ -15,15 +15,15 @@ export default function App() {
   const [user, setUser] = useState({});
   console.log(user);
   return (
-
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} ></Route>
-        <Route path="/signup"element={<Signup />} ></Route>
-        <Route path="/portfolio/:id"element={<Portfolio />} ></Route>
-        <Route exact path="/" element={<Gallery />} ></Route>
-      </Routes>
-    </Router>
+    <Portfolio />
+    // <Router>
+    //   <Routes>
+    //     {/* <Route path="/login" element={<Login />} ></Route>
+    //     <Route path="/signup"element={<Signup />} ></Route> */}
+    //     <Route path="/portfolio/:id"element={<Portfolio />} ></Route>
+    //     {/* <Route exact path="/" element={<Gallery />} ></Route> */}
+    //   </Routes>
+    // </Router>
   )
 }
 

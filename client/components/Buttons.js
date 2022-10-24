@@ -10,6 +10,7 @@ const Button = styled.img`
   cursor: pointer;
   opacity: 70%;
   height: 10%;
+  width: 10%;
   transform: translateY(-50%);
   left: ${(props) => props.side === 'prev' && 5}px;
   right: ${(props) => props.side === 'next' && 5}px;
