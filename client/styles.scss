@@ -5,20 +5,21 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
 html, body {
     margin: 0;
     height: 100%;
-//     background-image: url(background-pic.jpeg);
-//     min-height: 100%;
-//     position: fixed;
-//     width: 100%;
-//     height: auto;
-//     top: 0;
-//     left: 0;
+    background-image: url(background-pic.jpeg);
+    min-height: 100%;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
 }
+
 
 body {
     background-color: $black;
     display: flex;
     justify-content: center;
-}
+ }
 
 .primary-text {
     color: white;

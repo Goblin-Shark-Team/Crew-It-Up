@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/portfolio.scss';
-import SearchBar from './Searchbar.jsx';
+import SearchBar from './Gallery.jsx/index.js';
 import SliderBody from './sliderbody.jsx'
 
 

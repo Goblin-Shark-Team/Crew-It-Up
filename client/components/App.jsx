@@ -6,6 +6,7 @@ import Portfolio from './Portfolio';
 //import React from 'react';
 import '../styles/portfolio.scss';
 import Header from './Header';
+
 import Signup from './Signup'
 import Upload from './upload';
 import Navbar from './Navbar';
@@ -19,17 +20,6 @@ function App() {
       <Header setUser={setUser}/>
     </div>
   )
+
 }
-export default App;
-
-// const App = () => {
-//   return <div>
-//     <Header />
-//   </div>;
-// };
-
-// export default App;
-
-
-
 

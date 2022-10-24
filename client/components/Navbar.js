@@ -1,8 +1,9 @@
 import React from 'react'
-//import  {MenuItems}  from  './MenuItems' ;
+import  {MenuItems}  from  './MenuItems' ;
 
 function Navbar ()  {
 const menuItems = [
+
   {
     location: 'Pensacola',
     url: '/Pensacola',
@@ -20,7 +21,6 @@ const menuItems = [
    url: '/NewYork',
   },
  ];
-
 
  return (
   <nav>

@@ -4,32 +4,33 @@ import { useState } from 'react';
 // what is the Schema for dummy data
 // what format is it getting to us? ...
 // Ask backend to send us this info...
-const dummyData = [
-  {
-    location: 'Brooklyn',
-    artist: 'Evan',
-    url: 'https://plus.unsplash.com/premium_photo-1661963934962-0b4426a0793f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnJvb2tseW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-  },
-  {
-    location: 'Brooklyn',
-    artist: 'Alex',
-    url: 'https://images.unsplash.com/photo-1565867254334-10280784ff69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJvb2tseW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-  },
-  {
-    location: 'Baton Rogue',
-    artist: 'Kaju',
-    url : "https://images.unsplash.com/photo-1618676673082-c335cf580651?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmF0b24lMjByb3VnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1296&q=60"
-  },
-  {
-    location: 'Baton Rogue',
-    artist: 'Jen',
-  },
-]
 
 
-const SearchBar = () => {
+ export function Searchbar  () {
 
   //const navigate = useNavigate();
+
+  const dummyData = [
+    {
+      location: 'Brooklyn',
+      artist: 'Evan',
+      url: 'https://plus.unsplash.com/premium_photo-1661963934962-0b4426a0793f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnJvb2tseW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    },
+    {
+      location: 'Brooklyn',
+      artist: 'Alex',
+      url: 'https://images.unsplash.com/photo-1565867254334-10280784ff69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJvb2tseW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    },
+    {
+      location: 'Baton Rogue',
+      artist: 'Kaju',
+      url : "https://images.unsplash.com/photo-1618676673082-c335cf580651?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmF0b24lMjByb3VnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1296&q=60"
+    },
+    {
+      location: 'Baton Rogue',
+      artist: 'Jen',
+    },
+  ]
 
   const [location, setLocation] = useState();
   const [allArtists, setAllArtists] = useState([]);
@@ -50,7 +51,7 @@ const SearchBar = () => {
     })
     console.log(names);
     setAllArtists(names);
-    navigate('/gallery')
+    navigate('/London')
   }
   
 
@@ -66,4 +67,3 @@ const SearchBar = () => {
     </div>
   )
 }
-export default SearchBar;
