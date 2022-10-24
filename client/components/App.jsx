@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Login from './Login'
 import Portfolio from './Portfolio';
-import '../styles/login.scss'
+import '../styles.scss'
+import Upload from './upload'
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class App extends Component {
     return (
       <div>
         
-        <Login />
+        <Upload />
+
       </div>
     )
   }
