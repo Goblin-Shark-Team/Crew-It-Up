@@ -1,0 +1,13 @@
+$black: rgb(14, 14, 14);
+$black-light: rgb(18, 18, 18);
+$primary-font-stack: 'Montserrat', sans-serif;
+$secondary-font-stack: 'Fira Sans', sans-serif;
+
+#navbar {
+    background-color: $black-light;
+    width: 100vw;
+    height: 5vh;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+}
