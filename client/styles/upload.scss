@@ -1,0 +1,85 @@
+$black: rgb(14, 14, 14);
+$black-light: rgb(18, 18, 18);
+$primary-font-stack: 'Montserrat', sans-serif;
+$secondary-font-stack: 'Fira Sans', sans-serif;
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+// #upload-layout {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+#user-setup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#upload-title {
+    font-family: $primary-font-stack;
+    color: white;
+    text-shadow: 0 0 5px gray;
+    font-weight: 200;
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    margin-top: 30%;
+}
+
+.label-text {
+    font-family: $secondary-font-stack;
+    color: white;
+    font-weight: 200;
+    margin-bottom: 2%;
+    margin-top: 6%;
+    font-size: 1.3rem;
+}
+
+.input-style {
+    width: 80%;
+    text-align: center; 
+    height: 2em;
+    border-radius: 0;
+    border: none;
+}
+
+.input-style:focus {
+    box-shadow: 0 0 10px gray;
+    outline: none;
+}
+
+#upload-button {
+    width: 40%;
+    box-shadow: 0 0 10px gray;
+}
+
+#bio-box {
+    height: 6rem;
+    text-align: left;
+    overflow: scroll;
+    width: 100%;
+    resize: none;
+    font-family: $secondary-font-stack;
+}
+
+.button-style {
+    margin-top: 1.5rem;
+    width: 20%;
+    height: 1.6rem;
+    font-family: $primary-font-stack;
+    font-weight: 200;
+    background-color: white;
+    border: none;
+    font-size: 1.1rem;
+}
+
+#set-user-btn {
+    margin-top: 0;
+}
