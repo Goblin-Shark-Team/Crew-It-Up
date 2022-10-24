@@ -6,8 +6,10 @@ import Portfolio from './Portfolio';
 import '../styles.scss';
 import Header from './Header';
 import Signup from './Signup'
+import Upload from './upload'
+import Navbar from './Navbar';
 import SliderBody from './SliderBody.jsx';
-import Upload from './upload.js'
+// import Upload from './upload.js'
 
 
 function App() {

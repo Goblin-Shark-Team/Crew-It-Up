@@ -7,6 +7,7 @@ export default function Upload(props){
     const[userEmail, setUserEmail] = useState('')
     const[city, setCity] = useState('')
     const[bio, setBio] = useState('')
+    const[url, setUrl] = useState('')
 
     const hiddenFileInput = useRef(null)
 
@@ -25,6 +26,7 @@ export default function Upload(props){
     const handleSubmit = e => {
         e.preventDefault(); 
         console.log('user updated')
+        setUrl('')
     }
 
 
@@ -49,14 +51,13 @@ return(
         <p id='name-bar' className='label-text'>Name<br/></p>
             <input type='text'
             name='name'
-            className='input-style'
+            className='name-input'
             value={name}
             onChange={(e) => setName(e.target.value)}
             /> 
-        
-        {/* <label id='city-dropdown'> */}
-            <p className='label-text'>City<br/></p>
-            <select id='select-city' value={city} className='input-style' onChange={(e) => setCity(e.target.value)}>
+        <label id='city-dropdown'>
+            <span>City:</span>
+            <select id='select-city' value={city} onChange={(e) => setCity(e.target.value)}>
                 <option value='Select City'>Select City</option>
                 <option value='new york'>New York</option>
                 <option value='london'>London</option>
@@ -66,37 +67,51 @@ return(
                 <option value='chicago'>Chicago</option>
                 <option value='new orleans'>New Orleans</option>
             </select>
+            </label>
             <p className='label-text'>Email<br/></p>
             <input type='email'
             name="email"
-            className='input-style'
+            className="email-input"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
             />
             <p className='label-text'>Bio</p>
             <textarea type='text'
             name='bio'
-            id='bio-box'
-            cols='40'
-            rows='5'
-            className='input-style'
-            maxlength='800'
+            className='bio-input'
+            maxLength='800'
             value={bio}
             wrap='hard'
             onChange={(e) => setBio(e.target.value)}
             />
-          
+        <button  id='upload-button' onClick={handleClick}> Upload a file </button>  
+    </form>
 
-        <button id='upload-button' className='button-style' onClick={handleClick}>Upload a new photo</button><br/>  
+    <form id='url-submit' onSubmit={handleSubmit}>
+        <div id='url-text'>
+            <span>Upload URL:</span>
+            <input type='text'
+            className='url-input'
+            form='url-submit'
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            />
+            <button id='url-submit btn' onClick={handleClick} form='url-submit'>Upload Photos</button>
+             {/* <button  id='upload-button' onClick={handleClick}> Upload a file </button>  
         <input type="file"
             ref={hiddenFileInput}
             onChange={handleChange}
             style={{display:'none'}} 
-        />
+        /> */}
         {/* should bring us back to profile page */}
+        </div>
         <button type='submit' className='button-style' id='set-user-btn' >Submit</button>
     </form>  
 </div>  
 </div>
 )
 }
+
+//create url input box
+//when hit button clears input box
+//keep url as a string
