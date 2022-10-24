@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect  } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import '../styles/portfolio.scss';
 import Gallery from './Gallery.jsx';
 import Login from './Login';
@@ -11,20 +11,19 @@ import {
   Route, 
 } from 'react-router-dom';
 
-export default function App() {
+function App() {
   const [user, setUser] = useState({});
-  console.log(user);
+  const [portfolio_id, setPortfolio] = useState('');
   return (
-    <Portfolio />
-    // <Router>
-    //   <Routes>
-    //     {/* <Route path="/login" element={<Login />} ></Route>
-    //     <Route path="/signup"element={<Signup />} ></Route> */}
-    //     <Route path="/portfolio/:id"element={<Portfolio />} ></Route>
-    //     {/* <Route exact path="/" element={<Gallery />} ></Route> */}
-    //   </Routes>
-    // </Router>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} ></Route>
+        <Route path="/signup"element={<Signup />} ></Route>
+        <Route path="/portfolio"element={<Portfolio id={portfolio_id}/>} ></Route>
+        <Route exact path="/" element={<Gallery setPortfolio={setPortfolio}/>} ></Route>
+      </Routes>
+    </Router>
   )
 }
 
-
+export default App;
