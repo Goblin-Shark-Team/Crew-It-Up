@@ -47,7 +47,7 @@ router.post('/signup',
   validator.validate,
   userController.createUser,
   (req, res) => {
-    return res.sendStatus(201); // created
+    return res.status(201).send(res.locals.user);
   }
 )
 

@@ -5,15 +5,15 @@ import Signup from './signup.js'
 //import Searchbar from './Searchbar';
 import '../styles.scss';
 import Header from './Header';
+import Signup from './Signup'
 
 
 function App() {
   const [user, setUser] = useState({});
-
+  console.log(user);
   return (
     <div>
-      <Signup />
-      {/* <Login setUser={setUser}/> */}
+      <Signup setUser={setUser}/>
     </div>
   )
 }

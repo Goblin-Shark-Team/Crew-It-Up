@@ -62,13 +62,17 @@ userController.createUser = (req, res, next) => {
 
   db.query(query)
     .then(data => {
-      console.log(data);
-      // res.locals.user = ;
+      console.log(data.rows);
       return next();
-    }).catch(err => next({
-      log: 'error in userController createUser',
-      message: { err: err }
-    }));
+    }).catch(err => {
+      if(err.routine = '_bt_check_unique'){
+        res.locals.user = false;
+        return next();
+      }
+      return next({
+        log: 'error in userController createUser',
+        message: { err: err }
+    })});
 };
 
 /**
