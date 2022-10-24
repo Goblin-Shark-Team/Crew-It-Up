@@ -33,7 +33,7 @@ CREATE TABLE public.users (
 CREATE TABLE public.photos (
   "_id" serial NOT NULL,
   "url" varchar NOT NULL,
-  "user_id" bigint NOT NULL ,
+  "user_id" bigint NOT NULL,
   CONSTRAINT "photos_pk" PRIMARY KEY ("_id")
 ) WITH (
   OIDS=FALSE

@@ -91,11 +91,11 @@ router.put('/email',
  * Body: user_id, one, many, or all of firstname, lastname, city, state, zipcode, bio
  * Returns: 
  */
- router.put('/profile', 
- userController.updateProfile,
- (req,res) => {
-   return res.status(200).json(res.locals.updated);
- }
+router.put('/profile', 
+  userController.updateProfile,
+  (req,res) => {
+    return res.status(200).json(res.locals.updated);
+  }
 )
 
 /**
@@ -106,10 +106,10 @@ router.put('/email',
  * Returns:  
  */
 router.delete('/', 
-userController.deleteUser,
-  (req, res) => {
-    return res.status(200).json(res.locals.deleted);
-  }
+  userController.deleteUser,
+    (req, res) => {
+      return res.status(200).json(res.locals.deleted);
+    }
 )
 
 module.exports = router;
