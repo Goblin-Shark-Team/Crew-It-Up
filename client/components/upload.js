@@ -64,21 +64,28 @@ return(
             onChange={(e) => setUserEmail(e.target.value)}
             />
             <p className='label-text'>Bio</p>
-            <input type='text'
+            <textarea type='text'
             name='bio'
+            id='bio-box'
+            cols='40'
+            rows='5'
             className='input-style'
-            maxLength='800'
+            maxlength='800'
             value={bio}
+            wrap='hard'
             onChange={(e) => setBio(e.target.value)}
             />
-        <button id='upload-button' className='button-style' onClick={handleClick}>Upload a file</button>  
+          
+
+        <button id='upload-button' className='button-style' onClick={handleClick}>Upload a new photo</button><br/>  
         <input type="file"
             ref={hiddenFileInput}
             onChange={handleChange}
             style={{display:'none'}} 
-            />
-        <button type='submit' className='button-style' id='set-user-btn'>Submit</button>
-    </form>
+        />
+        {/* should bring us back to profile page */}
+        <button type='submit' className='button-style' id='set-user-btn' >Submit</button>
+    </form>  
 </div>  
 )
 }
