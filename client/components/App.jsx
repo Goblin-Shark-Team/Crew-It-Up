@@ -1,8 +1,11 @@
 import React, { Component, useState, useEffect  } from 'react';
 import Login from './Login'
 import Portfolio from './Portfolio';
-import '../styles.scss'
-import Upload from './upload'
+//import Searchbar from './Searchbar';
+//import '../styles.scss';
+//import React from 'react';
+import '../styles/portfolio.scss';
+import Header from './Header';
 
 
 function App() {
@@ -13,7 +16,17 @@ function App() {
       <Login setUser={setUser}/>
     </div>
   )
-
 }
-
 export default App;
+
+// const App = () => {
+//   return <div>
+//     <Header />
+//   </div>;
+// };
+
+// export default App;
+
+
+
+
