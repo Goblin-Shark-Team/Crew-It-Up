@@ -31,6 +31,7 @@ export default function Login (props) {
                  * state - string
                  * zip_code - string
                  */
+                props.setUser(data);
             }
           })
           .catch(err => alert('please try again'));

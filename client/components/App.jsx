@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect  } from 'react';
 import Login from './Login'
 import Portfolio from './Portfolio';
 import '../styles.scss'
 import Upload from './upload'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
-  render() {
-    return (
-      <div>
-        <Upload />
-        {/* <Login /> */}
-      </div>
-    )
-  }
+function App() {
+  const [user, setUser] = useState({});
+
+  return (
+    <div>
+      <Login setUser={setUser}/> 
+    </div>
+  )
+
 }
 
 export default App;
