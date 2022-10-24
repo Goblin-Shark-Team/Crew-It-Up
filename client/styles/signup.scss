@@ -3,11 +3,12 @@ $black-light: rgb(18, 18, 18);
 $primary-font-stack: 'Montserrat', sans-serif;
 $secondary-font-stack: 'Fira Sans', sans-serif;
 
-#body {
+#signup-body {
     display: flex;
     margin: 0;
     display: grid;
     grid-template-rows: 5% 95%;
+    justify-items: center;
     background-color: $black;
     height: 100vh;
 }

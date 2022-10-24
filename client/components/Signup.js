@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/signup.scss';
 import Navbar from './Navbar.js';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup(props) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -38,6 +40,10 @@ export default function Signup(props) {
           alert('That email is already associated with an account.')
         } else { 
             props.setUser(data);
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
+            navigate(`/login`);
         }
       })
       .catch(err => {
@@ -45,7 +51,7 @@ export default function Signup(props) {
       });
   }
   return (
-    <div id='body'>
+    <div id='signup-body'>
       <Navbar />
         <form id='signup-box' onSubmit={handleSubmit}>
             <span className='primary-text'>SIGN UP</span>

@@ -6,6 +6,7 @@ body {
     background-color: $black;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
  }
@@ -13,4 +14,14 @@ body {
 .primary-text {
     color: white;
     font-family: $primary-font-stack;
+}
+
+img {
+    display: inline-block;
+    grid-row: inherit;
+    grid-column: inherit;
+    width: 30vw;
+    height: 60vh;
+    object-fit: cover;
+    margin: 10px;
 }

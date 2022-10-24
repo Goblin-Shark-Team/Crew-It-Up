@@ -27,7 +27,7 @@ const Slide = styled.div`
 
 export default function Carousel({
   images,
-  // setWidth,
+  setWidth,
   xPosition,
   handleClickPrev,
   handleClicknext,
@@ -36,12 +36,14 @@ export default function Carousel({
 {
   const slideRef = useRef(images);
 
-  // useEffect(() => {
-  //   if (slideRef.current) {
-  //     const width = slideRef.current.clientWidth;
-  //     setWidth(width);
-  //   }
-  // }, [setWidth]);
+  useEffect(() => {
+    console.log(images);
+    if (slideRef.current) {
+      console.log(slideRef.current)
+      const width = slideRef.current.clientWidth;
+      setWidth(width);
+    }
+  }, [setWidth]);
   
   return (
     <Wrapper>

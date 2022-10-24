@@ -6,7 +6,7 @@ export default function SliderBody(props) {
   
 
   const [index, setIndex] = useState(0);
-  const width = 900;
+  const [width, setWidth] = useState(0);
   const [xPosition, setXPosition] = useState(0);
   
 
@@ -22,11 +22,12 @@ export default function SliderBody(props) {
       setIndex(0);
       setXPosition(0);
     } else {
+      console.log(width);
       setIndex(index + 1);
       setXPosition(xPosition - width);
     }
   };
-  
+
   return (
     <div id='wrap'>
       <Carousel

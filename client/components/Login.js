@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Navbar from './Navbar.js';
 import '../styles/login.scss';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login (props) {
+    const navigate = useNavigate();
     const[email, setEmail] = useState(""); 
     const[password, setPassword] = useState("");
 
@@ -23,6 +25,7 @@ export default function Login (props) {
             } else { 
                 // Get data to app
                 props.setUser(data);
+                navigate(`/upload`);
             }
           })
           .catch(err => alert('please try again'));

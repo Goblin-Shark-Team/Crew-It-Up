@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 import '../styles.scss'
 import '../styles/gallery.scss'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Gallery (props) {
   const[ photos, setPhotos ] = useState({}); 
