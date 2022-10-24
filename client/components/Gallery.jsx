@@ -2,12 +2,18 @@ import React, {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 
 
-export default function Gallery () {
-  
+export default function Gallery (props) {
+  const[ photos, setPhotos ] = useState({}); 
   function handleCityChange (e) {
     fetch(`photos/city/${e.target.value}`)
       .then(data => data.json())
-      .then(data => console.log(data))
+      .then(data => {
+        const obj = {};
+        data.forEach((e,i) => {
+          obj[i] = { user_id: e._id, url: e.url };
+        });
+        setPhotos(obj);
+      })
       .catch(err => console.log(err));
   }
   
@@ -25,6 +31,15 @@ export default function Gallery () {
      location: 'New York',
     },
    ];
+   
+   const photoDiv = [];
+   for(const key in photos){
+    photoDiv.push(
+      <div className="photo-div">
+        <img src={photos[key]['url']}></img>
+      </div>
+    )
+   }
    
   return (
     
@@ -46,15 +61,7 @@ export default function Gallery () {
 
 
       <div id='grid-photos'>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
+        {photoDiv} 
       </div>
     </div>
   );
