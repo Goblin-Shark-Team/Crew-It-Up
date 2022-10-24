@@ -6,14 +6,15 @@ import Portfolio from './Portfolio';
 //import React from 'react';
 import '../styles/portfolio.scss';
 import Header from './Header';
+import Signup from './Signup'
 
 
 function App() {
   const [user, setUser] = useState({});
-
+  console.log(user);
   return (
     <div>
-      <Login setUser={setUser}/>
+      <Signup setUser={setUser}/>
     </div>
   )
 }

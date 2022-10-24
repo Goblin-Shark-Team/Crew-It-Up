@@ -1,4 +1,4 @@
-import  {menuItems}  from  './MenuItems' ;
+import  {MenuItems}  from  './menuItems' ;
 const menuItem = [
   {
     location: 'Pensacola',
@@ -21,7 +21,7 @@ const Navbar = () => {
  return (
   <nav>
    <ul className = 'menus'>
-    {menuItems.map((menu, index) => {
+    {MenuItems.map((menu, index) => {
      return (
       <li 
         className = "menu-items" 
