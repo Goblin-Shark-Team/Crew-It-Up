@@ -18,7 +18,8 @@ export default function Gallery (props) {
       .catch(err => console.log(err));
   }
   function handleImageClick(e){
-    navigate(`/portfolio/${e.target.classList[0]}`);
+    props.setPortfolio(e.target.classList[0]);
+    navigate(`/portfolio?_user=${e.target.classList[0]}`);
   } 
   const menuItems = [
     {
