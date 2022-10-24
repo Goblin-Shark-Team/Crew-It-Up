@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Navbar from './Navbar';
+import '../styles.scss'
+import '../styles/gallery.scss'
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Gallery (props) {
@@ -42,27 +44,25 @@ export default function Gallery (props) {
       <div className="photo-div">
         <img onClick={handleImageClick} src={photos[key]['url']} className={photos[key]['user_id']}></img>
       </div>
-    )
+    ) 
+    console.log(photoDiv[0])
    }
    
   return (
     
     <div id='homepage'>
       <Navbar />
-      <nav>
-        <center>
+        <div id='dropdown'>
           <label id='dropdown-cities'> Select A City </label>
-          <select  onChange={handleCityChange}  className = 'menus' htmlFor='dropdown-cities'>
-            <option value='null'> Select A City</option>
+          <select  onChange={handleCityChange}  className='menus' htmlform='dropdown-cities'>
+            <option value='null'>Choose one</option>
             {menuItems.map((menu, index) =>
             <option value={menu.location} className='menu-items'>
               {menu.location}
             </option>
             )}
           </select>
-      </center>
-      </nav>
-
+      </div>
 
       <div id='grid-photos'>
         {photoDiv} 

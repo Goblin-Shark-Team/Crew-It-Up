@@ -5,11 +5,13 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
 
 #navbar {
     background-color: $black-light;
+    grid-row: 1 / 2;
     width: 100vw;
-    height: 5vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 20% 68% 12%;
     align-items: center;
+    position: sticky;
 }
 
 #logo {
@@ -27,5 +29,5 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-right: 2%;
+    margin-right: 6%;
 }

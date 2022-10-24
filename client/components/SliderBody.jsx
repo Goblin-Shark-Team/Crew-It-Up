@@ -6,7 +6,7 @@ export default function SliderBody(props) {
   
 
   const [index, setIndex] = useState(0);
-  const [width, setWidth] = useState(0);
+  const width = 900;
   const [xPosition, setXPosition] = useState(0);
   
 

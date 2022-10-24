@@ -8,9 +8,8 @@ function Navbar ()  {
   <nav id='navbar'>
   <div id='logo'>Crew It Up</div>
     <section id='right-nav'>
-      <nav className="secondary-text">Feed</nav>
-      <nav className="secondary-text">Profile</nav>
-      <nav className="secondary-text">Search</nav>
+      <nav className="secondary-text">Log in</nav>
+      <nav className="secondary-text">Sign up</nav>
     </section>
   </nav>
  );

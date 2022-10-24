@@ -1,5 +1,6 @@
 import React from "react";
 import {useEffect,useState} from "react";
+import Navbar from './Navbar.js';
 import '../styles/portfolio.scss';
 import SliderBody from './SliderBody.jsx'
 
@@ -17,14 +18,7 @@ export default function Portfolio(props){
 
     return (
       <div id='portfolio-body'>
-        <nav id='navbar'>
-          <div id='logo'>Crew It Up</div>
-          <section id='right-nav'>
-            <nav className="secondary-text">Feed</nav>
-            <nav className="secondary-text">Profile</nav>
-            <nav className="secondary-text">Search</nav>
-          </section>
-        </nav>
+        <Navbar />
         <div id='portfolio-title'>
           <h1 id='portfolio-name'>Cyrus Yari</h1>
         </div>
@@ -33,7 +27,6 @@ export default function Portfolio(props){
             <p id='bio-text'>I am a cool photographer who takes cool pictures of very cool boats in Thailand.</p>
             <div id='contact' className="secondary-text">
               Contact me here.
-              {/* add logic to get email address for photographer here */}
             </div>
         </div>
       </div>
