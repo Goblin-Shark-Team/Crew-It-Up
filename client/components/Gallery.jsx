@@ -40,7 +40,8 @@ export default function Gallery (props) {
       <div className="photo-div">
         <img src={photos[key]['url']}></img>
       </div>
-    )
+    ) 
+    console.log(photoDiv[0])
    }
    
   return (
@@ -49,7 +50,7 @@ export default function Gallery (props) {
       <Navbar />
         <div id='dropdown'>
           <label id='dropdown-cities'> Select A City </label>
-          <select  onChange={handleCityChange}  className='menus' htmlFor='dropdown-cities'>
+          <select  onChange={handleCityChange}  className='menus' htmlForm='dropdown-cities'>
             <option value='null'>Choose one</option>
             {menuItems.map((menu, index) =>
             <option value={menu.location} className='menu-items'>
