@@ -15,7 +15,13 @@ userController.login = (req, res, next) => {
   const query = `SELECT * FROM users WHERE email = '${req.params.email}' AND passcode = '${req.params.passcode}'`; //update query(ies)
   db.query(query)
     .then(data => {
-      res.locals.user = data.rows[0].rows[0];
+      res.locals.user = {};
+      for(const key in data.rows[0]){
+        if(!(key === 'passcode' || key === 'email')){
+          res.locals.user[key] = data.rows[0][key];
+        }
+      }
+      if(Object.keys(res.locals.user).length === 0) res.locals.user = false;
       return next();
     }).catch(err => next({
         log: 'error in userController login',
@@ -47,7 +53,7 @@ userController.getProfile = (req, res, next) => {
  * Create a new user in the SQL database
  * Return - an object containing the new user information
  * Params - N/A
- * req.body - password (hashed? string), email (string)
+ * req.body - passcode (hashed? string), email (string)
  * ****** Email must be unique in DB ******************
  */
 userController.createUser = (req, res, next) => {
@@ -66,7 +72,7 @@ userController.createUser = (req, res, next) => {
 };
 
 /**
- * Update password
+ * Update passcode
  * Params: N/A
  * Body: user_id
  * Returns: 
@@ -135,7 +141,7 @@ userController.updateEmail = (req, res, next) => {
 /**
  * Delete user and all associated child content (see postgres on delete cascade)
  * Params: N/A
- * Body: user_id, password (hashed? string) 
+ * Body: user_id, passcode (hashed? string) 
  * Returns: 
  */
 userController.deleteUser = (req, res, next) => {
