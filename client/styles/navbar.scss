@@ -8,6 +8,29 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     width: 100vw;
     height: 5vh;
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: 20% 60% 20%;
     align-items: center;
+=======
+    grid-template-columns: 20% 68% 12%;
+    align-items: center;
+}
+
+#logo {
+    grid-column: 1 / 2;
+    font-family: $primary-font-stack;
+    color: white;
+    margin-left: 10%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+#right-nav {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 2%;
+>>>>>>> dev
 }

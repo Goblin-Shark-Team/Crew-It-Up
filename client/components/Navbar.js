@@ -1,14 +1,38 @@
-import React from 'react'
-import '../styles/navbar.scss'
+import  {MenuItems}  from  './menuItems' ;
 
-function Navbar (props)  {
+function Navbar ()  {
+const menuItems = [
+
+  {
+    location: 'Pensacola',
+    url: '/Pensacola',
+  },
+  {
+    location: 'Austin',
+    url: '/Austin',
+  },
+  {
+   location: 'London',
+   url: '/London',
+  },
+  {
+   location: 'New York',
+   url: '/NewYork',
+  },
+ ];
+
  return (
-  <nav id='navbar'>
-      <div id='logo'>Crew It Up</div>
-      <section id='right-nav'>
-        <nav className="secondary-text">Log in</nav>
-        <nav className="secondary-text">Sign up</nav>
-      </section>
+  <nav>
+    <label id='dropdown-cities'> Choose A City </label>
+   <select className = 'menus' for='dropdown-cities'>
+    {menuItems.map((menu, index) =>
+    <option className='menu-itmes'>
+       <a href={menu.url}>
+       {menu.location}
+      </a>
+    </option>
+    )}
+   </select>
   </nav>
  );
 };
