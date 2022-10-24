@@ -45,6 +45,14 @@ export default function Signup(props) {
   }
   return (
     <div id='body'>
+      <nav id='navbar'>
+          <div id='logo'>Crew It Up</div>
+          <section id='right-nav'>
+            <nav className="secondary-text">Feed</nav>
+            <nav className="secondary-text">Profile</nav>
+            <nav className="secondary-text">Search</nav>
+          </section>
+          </nav>
         <form id='signup-box' onSubmit={handleSubmit}>
             <span className='primary-text'>SIGN UP</span>
             <div id='signup-boxes'>

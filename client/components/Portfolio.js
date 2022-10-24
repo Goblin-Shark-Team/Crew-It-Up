@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/portfolio.scss';
 import SearchBar from './Searchbar.jsx';
-import SliderBody from './sliderbody.jsx'
+import SliderBody from './SliderBody.jsx'
 
 
 // export default function Portfolio(){
@@ -53,7 +53,7 @@ export default function Portfolio(){
           <section id='right-nav'>
             <nav className="secondary-text">Feed</nav>
             <nav className="secondary-text">Profile</nav>
-            <nav className="secondary-text">Settings</nav>
+            <nav className="secondary-text">Search</nav>
           </section>
         </nav>
         <div id='portfolio-title'>

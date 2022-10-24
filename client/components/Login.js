@@ -28,7 +28,16 @@ export default function Login (props) {
     }
 
     return (
-        <div>
+        <div id='login-body'>
+        <nav id='navbar'>
+          <div id='logo'>Crew It Up</div>
+          <section id='right-nav'>
+            <nav className="secondary-text">Feed</nav>
+            <nav className="secondary-text">Profile</nav>
+            <nav className="secondary-text">Search</nav>
+          </section>
+        </nav>
+        <div id='main-login-comp'>
         <h1 className='primary-text' id='site-title'>WELCOME TO CREW IT UP</h1>
             <form id='login-box' onSubmit={handleSubmit}>
                 <span id='login-title' className='primary-text'>LOG IN</span>
@@ -56,6 +65,7 @@ export default function Login (props) {
                     <button type='submit' id='login-btn' disabled={!validateForm()}>Login</button>
                 </div>
             </form>
+            </div>
             </div>
     )
 

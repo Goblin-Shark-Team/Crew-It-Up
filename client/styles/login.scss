@@ -3,22 +3,47 @@ $black-light: rgb(18, 18, 18);
 $primary-font-stack: 'Montserrat', sans-serif;
 $secondary-font-stack: 'Fira Sans', sans-serif;
 
+#login-body {
+    display: flex;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 5% 95%;
+    justify-items: center;
+    background-color: $black;
+    height: 100vh;
+}
+
+#navbar {
+    background-color: $black-light;
+    grid-row: 1 / 2;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+}
+
 .primary-text {
     color: white;
     font-family: $primary-font-stack;
     letter-spacing: 3px;
 }
 
+#main-login-comp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
 #site-title {
     text-align: center;
     font-weight: 300;
     font-size: 3rem;
-    padding-top: 15%;
-    padding-bottom: 5%;
 }
 
 #login-box {
     display: flex;
+    grid-row: 2 / 3;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;

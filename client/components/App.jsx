@@ -1,11 +1,13 @@
 import React, { Component, useState, useEffect  } from 'react';
 import Login from './Login'
 import Portfolio from './Portfolio';
-import Signup from './signup.js'
+// import Signup from './signup.js'
 //import Searchbar from './Searchbar';
 import '../styles.scss';
 import Header from './Header';
 import Signup from './Signup'
+import SliderBody from './SliderBody.jsx';
+import Upload from './upload.js'
 
 
 function App() {
@@ -13,7 +15,10 @@ function App() {
   console.log(user);
   return (
     <div>
-      <Signup setUser={setUser}/>
+      <Upload />
+      {/* <Login /> */}
+      {/* <Signup setUser={setUser}/>  */}
+      {/* <Portfolio /> */}
     </div>
   )
 }

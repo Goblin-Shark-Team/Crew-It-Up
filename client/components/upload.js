@@ -33,7 +33,17 @@ export default function Upload(props){
 // file popup window not showing when i click the button. Can someone else try it on their comp?  Thanks
 // also cant type in the input fields.  Gonna hit up help desk for that cuz it seems like everything is correct
 return(
-<div id='upload-layout'>
+<div id='upload-body'>
+
+        <nav id='navbar'>
+          <div id='logo'>Crew It Up</div>
+          <section id='right-nav'>
+            <nav className="secondary-text">Feed</nav>
+            <nav className="secondary-text">Profile</nav>
+            <nav className="secondary-text">Search</nav>
+          </section>
+        </nav>
+   <div id='upload-layout'>     
     <h1 id='upload-title'>Update your account</h1>
     <form id='user-setup' onSubmit={handleSubmit}>
         <p id='name-bar' className='label-text'>Name<br/></p>
@@ -87,5 +97,6 @@ return(
         <button type='submit' className='button-style' id='set-user-btn' >Submit</button>
     </form>  
 </div>  
+</div>
 )
 }
