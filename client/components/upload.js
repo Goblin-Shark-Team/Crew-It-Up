@@ -47,6 +47,7 @@ return(
         {/* <label id='city-dropdown'> */}
             <p className='label-text'>City<br/></p>
             <select id='select-city' value={city} className='input-style' onChange={(e) => setCity(e.target.value)}>
+                <option value='Select City'>Select City</option>
                 <option value='new york'>New York</option>
                 <option value='london'>London</option>
                 <option value='los angeles'>Los Angeles</option>
