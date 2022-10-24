@@ -6,9 +6,10 @@ import Portfolio from './Portfolio';
 //import React from 'react';
 import '../styles/portfolio.scss';
 import Header from './Header';
-
+import Navbar from './Navbar';
 import Upload from './upload'
- 
+import gallery from './gallery'
+import Searchbar from './Searchbar';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,8 +17,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        
-        <Upload />
+        <Searchbar/>
+        <Navbar />
+        {/* <Gallery /> */}
+       
 
       </div>
     )
