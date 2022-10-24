@@ -36,8 +36,7 @@ export default function Upload(props){
 return(
 <div>
     <h1>CREW IT UP</h1>
-    <form id='url-submit' onSubmit={handleSubmit}></form>
-    <form id='user-setup' onSubmit={handleSubmit}></form>
+    <form id='user-setup' onSubmit={handleSubmit}>
         <div id='name-bar'>Name:
             <input type='text'
             name='name'
@@ -70,16 +69,6 @@ return(
             onChange={(e) => setUserEmail(e.target.value)}
             />
         </div>
-        <div id='url-text'>
-            <span>Upload URL</span>
-            <input type='text'
-            className='url-input'
-            form='url-submit'
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            />
-            <button id='url-submit btn' onClick={handleClick} form='url-submit'>Upload...</button>
-        </div>
         <div id='bio-text'>
             <p>Bio</p>
             <input type='text'
@@ -91,16 +80,28 @@ return(
             onChange={(e) => setBio(e.target.value)}
             />
         </div>
-        {/* <button  id='upload-button' onClick={handleClick}> Upload a file </button>  
+        </form>
+       
+        <form id='url-submit' onSubmit={handleSubmit}>
+        <div id='url-text'>
+            <span>Upload URL</span>
+            <input type='text'
+            className='url-input'
+            form='url-submit'
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            />
+            <button id='url-submit btn' onClick={handleClick} form='url-submit'>Upload Photos</button>
+             {/* <button  id='upload-button' onClick={handleClick}> Upload a file </button>  
         <input type="file"
             ref={hiddenFileInput}
             onChange={handleChange}
             style={{display:'none'}} 
             /> */}
-
+        </div>
+        </form>
         <button type='submit' id='set-user-btn' form='user-setup'>Submit</button>
-    
-
+        
 </div>  
 )
 }
