@@ -1,0 +1,81 @@
+$black: rgb(14, 14, 14);
+$black-light: rgb(18, 18, 18);
+$primary-font-stack: 'Montserrat', sans-serif;
+$secondary-font-stack: 'Fira Sans', sans-serif;
+
+body {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+}
+
+#body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-text {
+    color: white;
+    font-family: $primary-font-stack;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+}
+
+// #site-title {
+//     text-align: center;
+//     font-weight: 300;
+//     font-size: 3rem;
+//     padding-top: 15%;
+//     padding-bottom: 5%;
+// }
+
+#signup-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25vw;
+    width: 35vw;
+    border: solid 1px gray;
+    box-shadow: 0 0 7px gray;
+    background-color: $black-light;
+}
+
+#signup-title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.signup-input {
+    border: solid transparent;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    font-family: $secondary-font-stack;
+    font-weight: 300;
+    width: 250px;
+    height: 25px;
+}
+
+#signup-btn {
+    background-color: white;
+    font-family: $secondary-font-stack;
+    font-weight: 300;
+    opacity: .8;
+    border: none;
+    height: 2rem;
+    width: 10rem;
+}
+
+#signup-btn:enabled {
+    font-weight: 400;
+    border: solid transparent;
+    background-color: white;
+    opacity: 1;
+    border: solid 1px gray;
+    box-shadow: 0 0 6px gray;
+}

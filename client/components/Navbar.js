@@ -1,4 +1,4 @@
-import  {menuItems}  from  './MenuItems' ;
+// import  menuItems  from  './menuItems' ;
 const menuItem = [
   {
     location: 'Pensacola',

@@ -1,10 +1,9 @@
 import React, { Component, useState, useEffect  } from 'react';
 import Login from './Login'
 import Portfolio from './Portfolio';
+import Signup from './signup.js'
 //import Searchbar from './Searchbar';
-//import '../styles.scss';
-//import React from 'react';
-import '../styles/portfolio.scss';
+import '../styles.scss';
 import Header from './Header';
 
 
@@ -13,7 +12,8 @@ function App() {
 
   return (
     <div>
-      <Login setUser={setUser}/>
+      <Signup />
+      {/* <Login setUser={setUser}/> */}
     </div>
   )
 }

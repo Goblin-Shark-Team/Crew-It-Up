@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/signup.scss';
 
 export default function Signup(props) {
   const [email, setEmail] = useState('');
@@ -39,8 +40,7 @@ export default function Signup(props) {
       .catch(err => alert('please try again'));
   }
   return (
-    <div>
-    <h1 className='primary-text' id='signup-title'>SIGN UP AND CREW IT UP</h1>
+    <div id='body'>
         <form id='signup-box' onSubmit={handleSubmit}>
             <span className='primary-text'>SIGN UP</span>
             <div id='signup-boxes'>
