@@ -18,7 +18,9 @@ export default function Gallery (props) {
       })
       .catch(err => console.log(err));
   }
-  
+  function handleImageClick(e){
+    console.log(e.target.classList[0])
+  } 
   const menuItems = [
     {
       location: 'Pensacola',
@@ -38,7 +40,7 @@ export default function Gallery (props) {
    for(const key in photos){
     photoDiv.push(
       <div className="photo-div">
-        <img src={photos[key]['url']}></img>
+        <img onClick={handleImageClick} src={photos[key]['url']} className={photos[key]['user_id']}></img>
       </div>
     ) 
     console.log(photoDiv[0])
