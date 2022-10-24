@@ -32,8 +32,8 @@ export default function Carousel({
 }) 
 
 {
-  const slideRef = useRef(null);
-  
+  const slideRef = useRef(images);
+
   useEffect(() => {
     if (slideRef.current) {
       const width = slideRef.current.clientWidth;

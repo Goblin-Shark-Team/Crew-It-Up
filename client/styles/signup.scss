@@ -3,12 +3,11 @@ $black-light: rgb(18, 18, 18);
 $primary-font-stack: 'Montserrat', sans-serif;
 $secondary-font-stack: 'Fira Sans', sans-serif;
 
-#login-body {
+#body {
     display: flex;
     margin: 0;
     display: grid;
     grid-template-rows: 5% 95%;
-    justify-items: center;
     background-color: $black;
     height: 100vh;
 }
@@ -26,24 +25,20 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     color: white;
     font-family: $primary-font-stack;
     letter-spacing: 3px;
+    font-size: 1.8rem;
 }
 
-#main-login-comp {
+// #site-title {
+//     text-align: center;
+//     font-weight: 300;
+//     font-size: 3rem;
+//     padding-top: 15%;
+//     padding-bottom: 5%;
+// }
+
+#signup-box {
+    align-self: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10%;
-}
-
-#site-title {
-    text-align: center;
-    font-weight: 300;
-    font-size: 3rem;
-}
-
-#login-box {
-    display: flex;
-    grid-row: 2 / 3;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -54,13 +49,13 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     background-color: $black-light;
 }
 
-#login-title {
+#signup-title {
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 3px;
 }
 
-.login-input {
+.signup-input {
     border: solid transparent;
     margin: 10px 0px 10px 0px;
     text-align: center;
@@ -70,7 +65,7 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     height: 25px;
 }
 
-#login-btn {
+#signup-btn {
     background-color: white;
     font-family: $secondary-font-stack;
     font-weight: 300;
@@ -80,7 +75,7 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     width: 10rem;
 }
 
-#login-btn:enabled {
+#signup-btn:enabled {
     font-weight: 400;
     border: solid transparent;
     background-color: white;

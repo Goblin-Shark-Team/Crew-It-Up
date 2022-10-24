@@ -3,10 +3,33 @@ $black-light: rgb(18, 18, 18);
 $primary-font-stack: 'Montserrat', sans-serif;
 $secondary-font-stack: 'Fira Sans', sans-serif;
 
-body {
+#upload-body {
     display: flex;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 5% 95%;
+    background-color: $black;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+#upload-layout {
+   
+    display: flex;
+    grid-row: 2 / 3;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+}
+
+#navbar {
+    background-color: $black-light;
+    grid-row: 1 / 2;
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
     align-items: center;
 }
 
@@ -21,6 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 30%;
 }
 
 #upload-title {
@@ -30,7 +54,7 @@ body {
     font-weight: 200;
     font-size: 3.5rem;
     margin-bottom: 0;
-    margin-top: 30%;
+    margin-top: 0;
 }
 
 .label-text {
@@ -56,7 +80,7 @@ body {
 }
 
 #upload-button {
-    width: 40%;
+    width: 60%;
     box-shadow: 0 0 10px gray;
 }
 
@@ -71,7 +95,7 @@ body {
 
 .button-style {
     margin-top: 1.5rem;
-    width: 20%;
+    width: 40%;
     height: 1.6rem;
     font-family: $primary-font-stack;
     font-weight: 200;
