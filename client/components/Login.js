@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from './Navbar.js';
 import '../styles/login.scss';
 
 export default function Login (props) {
@@ -29,14 +30,7 @@ export default function Login (props) {
 
     return (
         <div id='login-body'>
-        <nav id='navbar'>
-          <div id='logo'>Crew It Up</div>
-          <section id='right-nav'>
-            <nav className="secondary-text">Feed</nav>
-            <nav className="secondary-text">Profile</nav>
-            <nav className="secondary-text">Search</nav>
-          </section>
-        </nav>
+        <Navbar />
         <div id='main-login-comp'>
         <h1 className='primary-text' id='site-title'>WELCOME TO CREW IT UP</h1>
             <form id='login-box' onSubmit={handleSubmit}>

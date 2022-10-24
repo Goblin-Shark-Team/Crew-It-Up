@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from './Navbar.js';
 import '../styles/portfolio.scss';
 import SliderBody from './sliderbody.jsx'
 
@@ -47,14 +48,7 @@ export default function Portfolio(){
 
     return (
       <div id='portfolio-body'>
-        <nav id='navbar'>
-          <div id='logo'>Crew It Up</div>
-          <section id='right-nav'>
-            <nav className="secondary-text">Feed</nav>
-            <nav className="secondary-text">Profile</nav>
-            <nav className="secondary-text">Search</nav>
-          </section>
-        </nav>
+        <Navbar />
         <div id='portfolio-title'>
           <h1 id='portfolio-name'>Cyrus Yari</h1>
         </div>

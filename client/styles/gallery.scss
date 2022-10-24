@@ -1,0 +1,30 @@
+$black: rgb(14, 14, 14);
+$black-light: rgb(18, 18, 18);
+$primary-font-stack: 'Montserrat', sans-serif;
+$secondary-font-stack: 'Fira Sans', sans-serif;
+
+#homepage {
+    display: flex;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 5% 5% 90%;
+    justify-items: center;
+    background-color: $black;
+    height: 100vh;
+}
+
+#dropdown {
+    font-family: $secondary-font-stack;
+    grid-row: 2 / 3;
+    justify-self: flex-end;
+    margin-top: 1.4rem;
+    margin-right: 2%;
+    color: white;
+    font-weight: 200;
+}
+
+#grid-photos {
+    grid-row: 3 / 4;
+    display: grid;
+    
+}

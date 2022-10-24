@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Navbar from './Navbar';
+import '../styles.scss'
+import '../styles/gallery.scss'
 
 
 export default function Gallery () {
@@ -30,20 +32,17 @@ export default function Gallery () {
     
     <div id='homepage'>
       <Navbar />
-      <nav>
-        <center>
+        <div id='dropdown'>
           <label id='dropdown-cities'> Select A City </label>
-          <select  onChange={handleCityChange}  className = 'menus' htmlFor='dropdown-cities'>
-            <option value='null'> Select A City</option>
+          <select  onChange={handleCityChange}  className='menus' htmlFor='dropdown-cities'>
+            <option value='null'>Choose one</option>
             {menuItems.map((menu, index) =>
             <option value={menu.location} className='menu-items'>
               {menu.location}
             </option>
             )}
           </select>
-      </center>
-      </nav>
-
+      </div>
 
       <div id='grid-photos'>
         <div className='homepage-photos'></div>

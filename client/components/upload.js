@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import Navbar from './Navbar.js';
 import '../styles/upload.scss'
 
 
@@ -36,15 +37,7 @@ export default function Upload(props){
 // also cant type in the input fields.  Gonna hit up help desk for that cuz it seems like everything is correct
 return(
 <div id='upload-body'>
-
-        <nav id='navbar'>
-          <div id='logo'>Crew It Up</div>
-          <section id='right-nav'>
-            <nav className="secondary-text">Feed</nav>
-            <nav className="secondary-text">Profile</nav>
-            <nav className="secondary-text">Search</nav>
-          </section>
-        </nav>
+    <Navbar />
    <div id='upload-layout'>     
     <h1 id='upload-title'>Update your account</h1>
     <form id='user-setup' onSubmit={handleSubmit}>
