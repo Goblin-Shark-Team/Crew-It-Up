@@ -5,12 +5,23 @@ const photosController = require('../controllers/photosController');
 
 const router = express.Router();
 
-router.get('/:user_id', (req, res) => {
-  return res.send(200);
+router.get('/user/:user_id', 
+  photosController.getUserPhotos,
+  (req, res) => { 
+    return res.status(200).json(res.locals.photos);
 })
 
-router.get('/:city', (req, res) => {
-  
+router.get('/city/:city', 
+  photosController.getCityPhotos,
+  (req, res) => {
+    return res.status(200).json(res.locals.photos);
+})
+
+router.post('/', 
+  // need to perform url validation 
+  photosController.uploadUserPhoto,
+  (req, res) => {
+    return res.status(200).json(res.locals.uploaded);
 })
 
 

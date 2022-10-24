@@ -21,22 +21,15 @@ export default function Login (props) {
               setPassword('');
             } else { 
                 // Get data to app
-                // Redirect user
-                /**
-                 * format - obj with keys
-                 * firstname - string
-                 * lastname - string
-                 * bio - string
-                 * city - string
-                 * state - string
-                 * zip_code - string
-                 */
+                props.setUser(data);
             }
           })
           .catch(err => alert('please try again'));
     }
 
     return (
+        <div>
+        <h1 className='primary-text' id='site-title'>WELCOME TO CREW IT UP</h1>
             <form id='login-box' onSubmit={handleSubmit}>
                 <span id='login-title' className='primary-text'>LOG IN</span>
                 <div id='login-boxes'>
@@ -63,6 +56,7 @@ export default function Login (props) {
                     <button type='submit' id='login-btn' disabled={!validateForm()}>Login</button>
                 </div>
             </form>
+            </div>
     )
 
 }

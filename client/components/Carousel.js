@@ -4,10 +4,11 @@ import Buttons from './Buttons';
 
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 55%;
-  overflow: hidden;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+position: relative;
+width: 40%;
+overflow: hidden;
+box-shadow: 0 0 7px gray;
+border: solid 30px rgb(18,18,18);
 `;
 
 const Slide = styled.div`
@@ -28,8 +29,10 @@ export default function Carousel({
   xPosition,
   handleClickPrev,
   handleClicknext,
-}) {
-  const slideRef = useRef();
+}) 
+
+{
+  const slideRef = useRef(null);
   
   useEffect(() => {
     if (slideRef.current) {
