@@ -8,6 +8,7 @@ import '../styles/portfolio.scss';
 import Header from './Header';
 import Signup from './Signup'
 import Upload from './upload';
+import Navbar from './Navbar';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   console.log(user);
   return (
     <div>
-      <Upload setUser={setUser}/>
+      <Header setUser={setUser}/>
     </div>
   )
 }
