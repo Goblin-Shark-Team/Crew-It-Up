@@ -17,7 +17,7 @@ export default function Upload(props){
 
     const handleChange = e => {
         
-        const fileUpladed = e.target.files[0]
+        const fileUploaded = e.target.files[0]
         props.handleFile(fileUploaded)
         
     }
