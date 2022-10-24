@@ -117,7 +117,7 @@ userController.updateEmail = (req, res, next) => {
  * Body: could contain firstname, lastname, city, state, zip_code, bio
  * Returns: 
  */
- userController.updateProfile = (req, res, next) => {
+userController.updateProfile = (req, res, next) => {
   console.log('in userController updateProfile');
   let choices = ``;
   for(const key in req.body) {

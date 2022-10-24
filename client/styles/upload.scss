@@ -1,0 +1,64 @@
+$black: rgb(14, 14, 14);
+$black-light: rgb(18, 18, 18);
+$primary-font-stack: 'Montserrat', sans-serif;
+$secondary-font-stack: 'Fira Sans', sans-serif;
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#user-setup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#upload-title {
+    font-family: $primary-font-stack;
+    color: white;
+    font-weight: 200;
+    font-size: 3.5rem;
+    margin-bottom: 5%;
+    margin-top: 40%;
+}
+
+.label-text {
+    font-family: $secondary-font-stack;
+    color: white;
+    font-weight: 200;
+    margin-bottom: 2%;
+    margin-top: 6%;
+    font-size: 1.3rem;
+}
+
+.input-style {
+    width: 80%;
+    text-align: center; 
+    height: 2em;
+    border-radius: 0;
+    border: none;
+}
+
+.input-style:focus {
+    box-shadow: 0 0 10px gray;
+    outline: none;
+}
+
+#upload-button {
+    width: 40%;
+    box-shadow: 0 0 10px gray;
+}
+
+.button-style {
+    margin-top: 1.5rem;
+    width: 20%;
+    height: 1.6rem;
+    font-family: $primary-font-stack;
+    background-color: white;
+    border: none;
+    font-size: 1.1rem;
+}
+

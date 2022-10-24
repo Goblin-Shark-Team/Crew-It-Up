@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import Carousel from './Carousel.js';
-import styled from 'styled-components';
-
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(18, 18, 18);
-`;
+import '../styles/portfolio.scss';
 
 export default function SliderBody() {
   const [index, setIndex] = useState(0);
@@ -37,7 +27,6 @@ export default function SliderBody() {
   
   return (
     <div id='wrap'>
-    <Wrapper className="App">
       <Carousel
         images={images}
         setWidth={setWidth}
@@ -45,7 +34,6 @@ export default function SliderBody() {
         handleClickPrev={handleClickPrev}
         handleClicknext={handleClicknext}
       />
-    </Wrapper>
     </div>
   );
 }
