@@ -1,5 +1,4 @@
-import React from 'react'
-import  {MenuItems}  from  './MenuItems' ;
+import  {MenuItems}  from  './menuItems' ;
 
 function Navbar ()  {
 const menuItems = [
