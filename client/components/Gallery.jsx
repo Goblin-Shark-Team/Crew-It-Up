@@ -4,12 +4,18 @@ import '../styles.scss'
 import '../styles/gallery.scss'
 
 
-export default function Gallery () {
-  
+export default function Gallery (props) {
+  const[ photos, setPhotos ] = useState({}); 
   function handleCityChange (e) {
     fetch(`photos/city/${e.target.value}`)
       .then(data => data.json())
-      .then(data => console.log(data))
+      .then(data => {
+        const obj = {};
+        data.forEach((e,i) => {
+          obj[i] = { user_id: e._id, url: e.url };
+        });
+        setPhotos(obj);
+      })
       .catch(err => console.log(err));
   }
   
@@ -28,6 +34,15 @@ export default function Gallery () {
     },
    ];
    
+   const photoDiv = [];
+   for(const key in photos){
+    photoDiv.push(
+      <div className="photo-div">
+        <img src={photos[key]['url']}></img>
+      </div>
+    )
+   }
+   
   return (
     
     <div id='homepage'>
@@ -45,15 +60,7 @@ export default function Gallery () {
       </div>
 
       <div id='grid-photos'>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
-        <div className='homepage-photos'></div>
+        {photoDiv} 
       </div>
     </div>
   );
