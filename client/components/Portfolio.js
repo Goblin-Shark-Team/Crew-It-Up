@@ -47,7 +47,7 @@ export default function Portfolio(){
     
 
     return (
-      <div id='body'>
+      <div id='portfolio-body'>
         <nav id='navbar'>
           <div id='logo'>Crew It Up</div>
           <section id='right-nav'>
@@ -57,11 +57,11 @@ export default function Portfolio(){
           </section>
         </nav>
         <div id='portfolio-title'>
-          <h1 id='portfolio-name'>Photographer Name</h1>
+          <h1 id='portfolio-name'>Cyrus Yari</h1>
         </div>
         <SliderBody />
         <div id='bio'>
-            <p id='bio-text'>I am a cool photographer who takes cool pictures of little cutie pie doggy woggies</p>
+            <p id='bio-text'>I am a cool photographer who takes cool pictures of very cool boats in Thailand.</p>
             <div id='contact' className="secondary-text">
               Contact me here.
               {/* add logic to get email address for photographer here */}

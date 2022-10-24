@@ -15,10 +15,10 @@ function App() {
   console.log(user);
   return (
     <div>
-      <Upload />
+      {/* <Upload /> */}
       {/* <Login /> */}
       {/* <Signup setUser={setUser}/>  */}
-      {/* <Portfolio /> */}
+      <Portfolio />
     </div>
   )
 }
