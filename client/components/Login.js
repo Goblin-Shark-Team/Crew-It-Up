@@ -37,6 +37,8 @@ export default function Login (props) {
     }
 
     return (
+        <div>
+        <h1 className='primary-text' id='site-title'>WELCOME TO CREW IT UP</h1>
             <form id='login-box' onSubmit={handleSubmit}>
                 <span id='login-title' className='primary-text'>LOG IN</span>
                 <div id='login-boxes'>
@@ -63,6 +65,7 @@ export default function Login (props) {
                     <button type='submit' id='login-btn' disabled={!validateForm()}>Login</button>
                 </div>
             </form>
+            </div>
     )
 
 }
