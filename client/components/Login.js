@@ -21,16 +21,7 @@ export default function Login (props) {
               setPassword('');
             } else { 
                 // Get data to app
-                // Redirect user
-                /**
-                 * format - obj with keys
-                 * firstname - string
-                 * lastname - string
-                 * bio - string
-                 * city - string
-                 * state - string
-                 * zip_code - string
-                 */
+                props.setUser(data);
             }
           })
           .catch(err => alert('please try again'));
