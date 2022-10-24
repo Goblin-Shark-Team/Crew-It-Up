@@ -3,7 +3,6 @@ import '../styles/portfolio.scss';
 import SearchBar from './Searchbar.jsx';
 import SliderBody from './SliderBody.jsx'
 
-
 // export default function Portfolio(){
 //     //const[images, setImages] = useState([]);
 //   useEffect(() => {

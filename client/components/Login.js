@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../styles/login.scss';
 
 export default function Login (props) {
-    const[email, setEmail] = useState("");
+    const[email, setEmail] = useState(""); 
     const[password, setPassword] = useState("");
 
     function validateForm(){

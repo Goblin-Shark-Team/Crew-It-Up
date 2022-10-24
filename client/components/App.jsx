@@ -1,37 +1,30 @@
 import React, { Component, useState, useEffect  } from 'react';
-import Login from './Login'
+import '../styles/portfolio.scss';
+import Gallery from './Gallery.jsx';
+import Login from './Login';
+import Signup from './Signup';
 import Portfolio from './Portfolio';
-// import Signup from './signup.js'
-//import Searchbar from './Searchbar';
-import '../styles.scss';
-import Header from './Header';
-import Signup from './Signup'
-import SliderBody from './SliderBody.jsx';
-import Upload from './upload.js'
 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route, 
+} from 'react-router-dom';
 
-function App() {
+export default function App() {
   const [user, setUser] = useState({});
   console.log(user);
   return (
-    <div>
-      {/* <Upload /> */}
-      {/* <Login /> */}
-      {/* <Signup setUser={setUser}/>  */}
-      <Portfolio />
-    </div>
+
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} ></Route>
+        <Route path="/signup"element={<Signup />} ></Route>
+        <Route path="/portfolio/:id"element={<Portfolio />} ></Route>
+        <Route exact path="/" element={<Gallery />} ></Route>
+      </Routes>
+    </Router>
   )
 }
-export default App;
-
-// const App = () => {
-//   return <div>
-//     <Header />
-//   </div>;
-// };
-
-// export default App;
-
-
 
 
