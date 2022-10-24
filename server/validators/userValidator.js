@@ -18,7 +18,7 @@ const confirmPasscode = () => {
     check('confirmPasscode').custom((value, { req }) =>{
       if(value !== req.body.passcode) {
         console.log(req.body.passcode, req.body.confirmPasscode);
-        throw new Error('confirm passcode does not match');
+        throw new Error('confirm password does not match');
       }
       return true;
     })
