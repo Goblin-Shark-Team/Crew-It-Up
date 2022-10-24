@@ -1,4 +1,22 @@
-import  {menuItems}  from  './menuItems' ;
+import  {menuItems}  from  './MenuItems' ;
+const menuItem = [
+  {
+    location: 'Pensacola',
+    url: '/',
+  },
+  {
+    location: 'Austin',
+    url: '/Austin',
+  },
+  {
+   location: 'London',
+   url: '/London',
+  },
+  {
+   location: 'New York',
+   url: '/NewYork',
+  },
+ ];
 const Navbar = () => {
  return (
   <nav>

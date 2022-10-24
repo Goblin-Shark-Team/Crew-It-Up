@@ -1,7 +1,7 @@
 import Navbar from './Navbar';
 import React from 'react';
 
-const Header = () => {
+export function Header () {
  return (
   <header>
    <div className = "nav-area">
