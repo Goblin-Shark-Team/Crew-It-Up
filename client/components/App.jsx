@@ -12,9 +12,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        
         <Upload />
-
+        {/* <Login /> */}
       </div>
     )
   }

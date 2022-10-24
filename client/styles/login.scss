@@ -3,6 +3,20 @@ $black-light: rgb(18, 18, 18);
 $primary-font-stack: 'Montserrat', sans-serif;
 $secondary-font-stack: 'Fira Sans', sans-serif;
 
+.primary-text {
+    color: white;
+    font-family: $primary-font-stack;
+    letter-spacing: 3px;
+}
+
+#site-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 3rem;
+    padding-top: 15%;
+    padding-bottom: 5%;
+}
+
 #login-box {
     display: flex;
     flex-direction: column;
@@ -48,5 +62,4 @@ $secondary-font-stack: 'Fira Sans', sans-serif;
     opacity: 1;
     border: solid 1px gray;
     box-shadow: 0 0 6px gray;
-    
 }
