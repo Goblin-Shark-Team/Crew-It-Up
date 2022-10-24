@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from './Navbar.js';
 import '../styles/portfolio.scss';
-import SliderBody from './sliderbody.jsx'
-
+import SearchBar from './Searchbar.jsx';
+import SliderBody from './SliderBody.jsx'
 
 // export default function Portfolio(){
 //     //const[images, setImages] = useState([]);

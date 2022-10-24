@@ -105,6 +105,3 @@ return(
 )
 }
 
-//create url input box
-//when hit button clears input box
-//keep url as a string

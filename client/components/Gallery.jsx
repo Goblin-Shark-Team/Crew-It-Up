@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 import '../styles.scss'
 import '../styles/gallery.scss'
-
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Gallery (props) {
   const[ photos, setPhotos ] = useState({}); 
+  const navigate = useNavigate();
   function handleCityChange (e) {
     fetch(`photos/city/${e.target.value}`)
       .then(data => data.json())
@@ -19,7 +20,7 @@ export default function Gallery (props) {
       .catch(err => console.log(err));
   }
   function handleImageClick(e){
-    console.log(e.target.classList[0])
+    navigate(`/portfolio/${e.target.classList[0]}`);
   } 
   const menuItems = [
     {
