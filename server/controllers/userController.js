@@ -37,7 +37,7 @@ userController.login = (req, res, next) => {
  */
 userController.getProfile = (req, res, next) => {
   console.log('in userController getProfile');
-  const query = `SELECT bio, email FROM users WHERE users._id=${req.params.user_id}`; //update query(ies)
+  const query = `SELECT bio, email, firstname, lastname FROM users WHERE users._id=${req.params.user_id}`; //update query(ies)
 
   db.query(query)
     .then(data => {
