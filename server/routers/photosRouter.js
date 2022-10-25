@@ -17,6 +17,7 @@ router.get('/city/:city',
     return res.status(200).json(res.locals.photos);
 })
 
+
 router.post('/', 
   // need to perform url validation 
   photosController.uploadUserPhoto,

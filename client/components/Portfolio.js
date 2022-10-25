@@ -2,6 +2,7 @@ import React from "react";
 import {useEffect,useState} from "react";
 import Navbar from './Navbar.js';
 import '../styles/portfolio.scss';
+
 import SliderBody from './SliderBody.jsx'
 
 

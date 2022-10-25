@@ -4,6 +4,7 @@ import Gallery from './Gallery.jsx';
 import Login from './Login';
 import Signup from './Signup';
 import Portfolio from './Portfolio';
+
 import Upload from './upload';
 
 import {
@@ -26,6 +27,21 @@ function App() {
       </Routes>
     </Router>
   )
+
 }
+export default App;
+
+// const App = () => {
+//   return <div>
+//     <Header />
+//   </div>;
+// };
+
+// export default App;
+
+
+
+
 
 export default App;
+

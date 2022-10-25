@@ -1,3 +1,4 @@
+
 import React from 'react';
 import '../styles/navbar.scss'
 import { useNavigate } from 'react-router-dom';
@@ -21,6 +22,7 @@ function Navbar ()  {
       </section>
     </nav>
   );
+
 };
 
 export default Navbar;
