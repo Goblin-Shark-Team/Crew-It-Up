@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Navbar from './Navbar.js';
 import '../styles/login.scss';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login (props) {
-    const[email, setEmail] = useState("");
+    const navigate = useNavigate();
+    const[email, setEmail] = useState(""); 
     const[password, setPassword] = useState("");
 
     function validateForm(){
@@ -21,22 +24,18 @@ export default function Login (props) {
               setPassword('');
             } else { 
                 // Get data to app
-                // Redirect user
-                /**
-                 * format - obj with keys
-                 * firstname - string
-                 * lastname - string
-                 * bio - string
-                 * city - string
-                 * state - string
-                 * zip_code - string
-                 */
+                props.setUser(data);
+                navigate(`/upload`);
             }
           })
           .catch(err => alert('please try again'));
     }
 
     return (
+        <div id='login-body'>
+        <Navbar />
+        <div id='main-login-comp'>
+        <h1 className='primary-text' id='site-title'>WELCOME TO CREW IT UP</h1>
             <form id='login-box' onSubmit={handleSubmit}>
                 <span id='login-title' className='primary-text'>LOG IN</span>
                 <div id='login-boxes'>
@@ -63,6 +62,8 @@ export default function Login (props) {
                     <button type='submit' id='login-btn' disabled={!validateForm()}>Login</button>
                 </div>
             </form>
+            </div>
+            </div>
     )
 
 }

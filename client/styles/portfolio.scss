@@ -3,37 +3,87 @@ $black-light: rgb(18, 18, 18);
 $primary-font-stack: 'Montserrat', sans-serif;
 $secondary-font-stack: 'Fira Sans', sans-serif;
 
-html, body {
-    margin: 0;
-    height: 100%;
-}
-
-#portfolio-main {
-    background-color: $black;
+#portfolio-body {
+    height: 100vh;
     display: grid;
-    grid-template-rows: 10% 75% 15%;
+    grid-template-rows: 5% 18% 55% 20%;
     justify-items: center;
 }
 
-header {
+#navbar {
+    background-color: $black-light;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+}
+
+#logo {
+    grid-column: 1 / 2;
+    font-family: $primary-font-stack;
+    color: white;
+    margin-left: 10%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+#right-nav {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 2%;
+}
+
+.secondary-text {
+    font-family: $secondary-font-stack;
+    color: white;
+    font-weight: 200;
+}
+
+.secondary-text:hover {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#portfolio-title {
+    display: flex;
+    align-items: flex-end;
     font-family: $primary-font-stack;
     color: white;
     text-transform: uppercase;
     font-size: 2rem;
-    font-weight: 500;
-    grid-row: 1 / 2;
-}
-
-#sliding-images {
-    border: 1px solid black;
-    background-color: $black-light;
-    height: 60%;
-    width: 75%;
     grid-row: 2 / 3;
 }
 
-#bio-text {
-    font-family: $secondary-font-stack;
-    color: white;
+#portfolio-name {
+    margin: 0px 0px 2% 0px;
+    font-weight: 200;
 }
 
+#wrap {
+    background-color: $black;
+    grid-row: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bio {
+    grid-row: 4 / 5;
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    width: 30%;
+    text-align: center;
+}
+
+#bio-text {
+    letter-spacing: 1px;
+    line-height: 1.4rem;
+    font-family: $secondary-font-stack;
+    color: white;
+    font-weight: 200;
+}

@@ -37,12 +37,6 @@ app.use('/', (req, res) => {
 })
 
 /**
- * Not found  error handler
- */
-
-
-
-/**
  * Global error handler
  */
 

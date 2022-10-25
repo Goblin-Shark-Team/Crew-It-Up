@@ -1,37 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import {useEffect,useState} from "react";
+import Navbar from './Navbar.js';
 import '../styles/portfolio.scss';
-import SearchBar from './Searchbar.jsx';
-import SliderBody from './sliderbody.jsx'
 
-// export default function Portfolio(){
-//     //const[images, setImages] = useState([]);
-//   useEffect(() => {
-//     fetch("https://dog.ceo/api/breeds/image/random")
-//    .then(response => response.json())
-//    .then(data => setImages(data.message))
-//    },[])
-  
-    
+import SliderBody from './SliderBody.jsx'
 
-//     return (
-//       <div id="portfolio-main">
-//         <header id='porfolio-name'><h1>Photographer Name</h1></header>
-          
-//             <SliderBody />
-         
-//           <div id='bio'>
-//               <p id='bio-text'>jahsdfkljahsdjkfhaksjdhflasjdkkkkflkasdasdff</p>
-          
-//           </div>
-//       </div>
-//     )
-// }
-function GalleryPage() {
- return (
-   <div className="gallery-page">
-     <h1>I'm a gallery!</h1>
-   </div>
- );
+
+export default function Portfolio(props){
+  const[images, setImages] = useState([]);
+  const[profileInfo, setProfileInfo] = useState({});
+
+  console.log('here');
+  useEffect(() => {
+    fetch(`/photos/user/${props.id}`)
+      .then(response => response.json())
+      .then(data => {
+        setImages(data.map(e => e.url));
+      });
+    fetch(`user/profile/${props.id}`)
+      .then(response => response.json())
+      .then(data => {
+        setProfileInfo(data);
+      });
+   },[]);
+
+    return (
+      <div id='portfolio-body'>
+        <Navbar />
+        <div id='portfolio-title'>
+          <h1 id='portfolio-name'>{`${profileInfo.firstname} ${profileInfo.lastname}`}</h1>
+        </div>
+        <SliderBody images={images}/>
+        <div id='bio'>
+            <p id='bio-text'>{profileInfo.bio}</p>
+            <div id='contact' className="secondary-text">
+              Contact me here.
+            </div>
+        </div>
+      </div>
+    )
 }
-export default GalleryPage;
 

@@ -2,27 +2,26 @@ $black: rgb(14, 14, 14);
 $primary-font-stack: 'Montserrat', sans-serif;
 $secondary-font-stack: 'Fira Sans', sans-serif;
 
-html, body {
-    margin: 0;
-    height: 100%;
-//     background-image: url(background-pic.jpeg);
-//     min-height: 100%;
-//     position: fixed;
-//     width: 100%;
-//     height: auto;
-//     top: 0;
-//     left: 0;
-}
-
 body {
     background-color: $black;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    margin: 0;
+    padding: 0;
+ }
 
 .primary-text {
     color: white;
     font-family: $primary-font-stack;
-    letter-spacing: 3px;
+}
+
+img {
+    display: inline-block;
+    grid-row: inherit;
+    grid-column: inherit;
+    width: 30vw;
+    height: 60vh;
+    object-fit: cover;
+    margin: 10px;
 }

@@ -4,16 +4,19 @@ import Buttons from './Buttons';
 
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 55%;
-  overflow: hidden;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+position: relative;
+width: 45%;
+margin: 0;
+overflow: hidden;
+box-shadow: 0 0 7px gray;
+border: solid 30px rgb(18,18,18);
+
 `;
 
 const Slide = styled.div`
   display: flex;
   width: 100%;
-  height: 450px;
+  height: 440px;
   transition: transform 0.6s ease-in-out;
   transform: ${props => `translateX(${props.xPosition}px)`};
   img {
@@ -28,11 +31,15 @@ export default function Carousel({
   xPosition,
   handleClickPrev,
   handleClicknext,
-}) {
-  const slideRef = useRef();
-  
+}) 
+
+{
+  const slideRef = useRef(images);
+
   useEffect(() => {
+    console.log(images);
     if (slideRef.current) {
+      console.log(slideRef.current)
       const width = slideRef.current.clientWidth;
       setWidth(width);
     }
